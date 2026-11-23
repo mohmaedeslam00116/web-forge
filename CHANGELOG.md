@@ -1,5 +1,11 @@
 # Web Forge changelog
 
+## 0.8.1 — Evidence Hardening
+
+- Require explicit renderer availability and screenshot/preview evidence for all three concepts when a renderer is available.
+- Validate all eight baseline fields before comparing a radical redesign.
+- Improve phrase normalization and add negative tests for cosmetic-only changes, repeated structures, and incomplete baselines.
+
 ## 0.8.0 — Design Generation Gate
 
 - Added `design-generation-engineering`, a mandatory production workflow for substantial design work and repeated-template complaints.

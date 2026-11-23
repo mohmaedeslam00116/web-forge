@@ -67,7 +67,7 @@ Then choose the page's dominant information model: a reading stream, record ledg
 
 For all substantial work, create exactly three first-pass structural candidates (A/B/C). They are not three palettes. They are three different answers to the product problem.
 
-Each candidate must specify all eight fields below. Use the same field names in `design-concepts.json` so the validator can compare them:
+Each candidate must specify all eight fields below. Use the same field names in `design-concepts.json` so the validator can compare them. Set `rendererAvailable` explicitly. When true, every candidate must point to an existing rendered PNG/JPG/WebP screenshot or a reviewable HTTP(S) preview URL; when false, every candidate must use `NOT AVAILABLE: [specific reason]` so the limitation remains visible:
 
 | Field | What it captures | Example contrast (illustrative only) |
 |---|---|---|
@@ -99,7 +99,7 @@ Do not add all three concepts to the production app. Keep them isolated, compare
 - A candidate cannot be counted as different based on palette, font, radius, shadow, icon set, gradient, or animation alone. Those are excluded from the fingerprint.
 - If two candidates share the same first-screen silhouette, main content order, and navigation topology, revise one before implementation.
 - For `radical-redesign`, the selected candidate must differ from the old baseline in at least **4 of the 8** structural fields. If that is inappropriate because the user explicitly requires preservation of the old composition, reclassify the task as `evolutionary-redesign` and record the preserved constraints; do not claim a radical redesign.
-- Run `node tools/check-design-divergence.mjs design-concepts.json` before selecting the structure. Fix validation errors; do not edit the validator to force a pass.
+- Run `node tools/check-design-divergence.mjs design-concepts.json` before selecting the structure. The validator checks all eight fields, normalizes obvious synonyms, requires evidence for all three prototypes when rendering is available, and verifies that a radical baseline is complete. Fix validation errors; do not edit the validator to force a pass.
 
 The validator is a floor, not a design judge. Honest labels can still describe a bad concept. The human/agent review must inspect the actual wireframes and confirm that the stated differences are visible.
 

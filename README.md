@@ -1,6 +1,6 @@
 # Web Forge
 
-**Version:** 0.8.0 — Design Generation Gate  
+**Version:** 0.8.1 — Design Generation Gate  
 **Type:** Agent skill pack / web engineering workflow  
 **Author:** Mohamed Eslam
 
@@ -43,9 +43,10 @@ For a new website, major redesign, or repeated-template complaint, start with:
 A design description is no longer enough. Substantial work now requires:
 
 - three candidate structures, each described by the same eight structural fields;
-- three low-fidelity prototypes rendered in a browser/project renderer when available;
+- three low-fidelity prototypes rendered in a browser/project renderer when available, with screenshot/preview evidence for each;
 - a check that each pair differs in at least four of eight structural dimensions;
-- a captured old-layout baseline for radical redesigns, with the selected concept differing in at least four dimensions;
+- an explicit `rendererAvailable` flag; if rendering is unavailable, all three candidates must disclose `NOT AVAILABLE: [reason]`;
+- a complete captured old-layout baseline for radical redesigns, with the selected concept differing in at least four dimensions;
 - implementation of the selected structure, then a rendered review against the candidate and baseline.
 
 The automated checker is a guardrail, not a design judge. It validates declared structural separation; it cannot determine if a concept is useful, beautiful, or usable. Those require reviewing the actual prototype and implementation.

@@ -16,7 +16,7 @@
     "shortDescription": "Design with product context. Build and verify."
   },
   "name": "web-forge",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "A product-specific web engineering copilot with rendered structural design exploration, measurable divergence gates, implementation, accessibility, testing, browser QA, performance, security, and release verification.",
   "author": {
     "name": "mohamed eslam",

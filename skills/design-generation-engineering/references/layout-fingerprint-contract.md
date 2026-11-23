@@ -34,3 +34,8 @@ Candidate A: narrow reading column, inline contents, continuous chapter sequence
 Candidate B: multi-pane live records, persistent workspace navigation, spatial overview with an exception queue, assignment and filtering actions.
 
 The user task, information model, region layout, density, and interactions differ. Color and typography are not needed to see the difference.
+
+
+## Prototype evidence flag
+
+Set `rendererAvailable` in `design-concepts.json`. If true, every candidate must include a reviewable HTTP(S) preview URL or an existing PNG/JPG/WebP screenshot path relative to the JSON file. If false, every candidate must use `NOT AVAILABLE: [specific limitation]`. A missing renderer is a disclosed limitation, not a silent pass.

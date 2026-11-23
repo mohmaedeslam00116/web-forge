@@ -56,13 +56,14 @@ function fingerprintDiff(a, b) {
   return DIMENSIONS.filter((key) => !similarMeaning(a?.[key], b?.[key]));
 }
 
-function validate(doc) {
+function validate(doc, baseDir = process.cwd()) {
   const errors = [];
   const warnings = [];
   if (!doc || typeof doc !== 'object' || Array.isArray(doc)) {
     return { ok: false, errors: ['Root must be a JSON object.'], warnings, details: {} };
   }
   if (!doc.project || !doc.intent) errors.push('`project` and `intent` are required.');
+  if (typeof doc.rendererAvailable !== 'boolean') errors.push('`rendererAvailable` must be true or false.');
   const allowedIntents = new Set(['new-product', 'new-surface', 'evolutionary-redesign', 'radical-redesign']);
   if (doc.intent && !allowedIntents.has(doc.intent)) errors.push(`Unknown intent: ${doc.intent}`);
   if (!Array.isArray(doc.candidates) || doc.candidates.length !== 3) {
@@ -92,8 +93,18 @@ function validate(doc) {
         errors.push(`Candidate ${candidate.id}: \`${key}\` is not an allowed structural dimension.`);
       }
     }
-    if (!candidate.prototypeEvidence || !String(candidate.prototypeEvidence).trim()) {
-      errors.push(`Candidate ${candidate.id} needs prototypeEvidence (rendered path/URL or explicit NOT AVAILABLE reason).`);
+    const evidence = String(candidate.prototypeEvidence ?? '').trim();
+    if (!evidence) {
+      errors.push(`Candidate ${candidate.id} needs prototypeEvidence.`);
+    } else if (doc.rendererAvailable === true) {
+      const isUrl = /^https?:\/\//i.test(evidence);
+      const isImage = /\.(png|jpe?g|webp)$/i.test(evidence);
+      const imagePath = path.resolve(baseDir, evidence);
+      if (!isUrl && (!isImage || !fs.existsSync(imagePath))) {
+        errors.push(`Candidate ${candidate.id}: renderer is available, so prototypeEvidence must be a rendered screenshot URL or an existing PNG/JPG/WebP path.`);
+      }
+    } else if (!/^NOT AVAILABLE:/i.test(evidence)) {
+      errors.push(`Candidate ${candidate.id}: rendererAvailable is false, so prototypeEvidence must explain the limitation with \`NOT AVAILABLE: ...\`.`);
     }
   }
 
@@ -111,6 +122,14 @@ function validate(doc) {
     if (!doc.baseline || typeof doc.baseline !== 'object') {
       errors.push('A radical redesign requires a captured `baseline` layoutDNA.');
     } else {
+      for (const key of DIMENSIONS) {
+        if (typeof doc.baseline[key] !== 'string' || !doc.baseline[key].trim()) {
+          errors.push(`Radical redesign baseline: \`baseline.${key}\` must be a non-empty string.`);
+        }
+      }
+      for (const key of Object.keys(doc.baseline)) {
+        if (!DIMENSIONS.includes(key)) errors.push(`Baseline field \`${key}\` is not a structural dimension.`);
+      }
       const selected = candidates.find((x) => x.id === doc.selected);
       const diff = fingerprintDiff(selected?.layoutDNA, doc.baseline);
       const passed = diff.length >= MIN_RADICAL_BASELINE;
@@ -138,12 +157,13 @@ function selfTest() {
   const base = {
     project: 'Web Forge self-test',
     intent: 'new-product',
+    rendererAvailable: false,
     selected: 'B',
     referenceNotes: 'Self-test fixtures use deliberately unrelated task models.',
     candidates: [
-      { id: 'A', thesis: 'Long-form reading continuity.', tradeoff: 'Discovery is secondary.', rejectionReason: 'Not the target product.', prototypeEvidence: 'prototype-a.html', layoutDNA: { primaryAnchor: 'chapter text', navigationModel: 'inline chapter contents', primaryRegion: 'single narrow reading column', contentTopology: 'continuous sequential prose', informationDensity: 'immersive low density', interactionModel: 'resume bookmark next chapter', mediaStrategy: 'rare inline illustrations', responsiveTransformation: 'reading column with collapsible controls' } },
-      { id: 'B', thesis: 'Live operations triage.', tradeoff: 'Dense and demanding.', prototypeEvidence: 'prototype-b.html', layoutDNA: { primaryAnchor: 'live incident queue', navigationModel: 'persistent workspace rail', primaryRegion: 'map beside ranked exception list', contentTopology: 'linked live records', informationDensity: 'compact high density', interactionModel: 'assign filter reroute resolve', mediaStrategy: 'operational map and status marks', responsiveTransformation: 'map switches to record-first mobile sequence' } },
-      { id: 'C', thesis: 'Curated visual storytelling.', tradeoff: 'Less efficient for bulk data.', rejectionReason: 'Not the target product.', prototypeEvidence: 'prototype-c.html', layoutDNA: { primaryAnchor: 'featured visual artifact', navigationModel: 'editorial project index', primaryRegion: 'asymmetric image-led canvas', contentTopology: 'curated case-study narrative', informationDensity: 'paced spacious editorial', interactionModel: 'browse select inspect story', mediaStrategy: 'large authored project imagery', responsiveTransformation: 'ordered single-column visual story' } },
+      { id: 'A', thesis: 'Long-form reading continuity.', tradeoff: 'Discovery is secondary.', rejectionReason: 'Not the target product.', prototypeEvidence: 'NOT AVAILABLE: validator self-test does not launch a browser', layoutDNA: { primaryAnchor: 'chapter text', navigationModel: 'inline chapter contents', primaryRegion: 'single narrow reading column', contentTopology: 'continuous sequential prose', informationDensity: 'immersive low density', interactionModel: 'resume bookmark next chapter', mediaStrategy: 'rare inline illustrations', responsiveTransformation: 'reading column with collapsible controls' } },
+      { id: 'B', thesis: 'Live operations triage.', tradeoff: 'Dense and demanding.', prototypeEvidence: 'NOT AVAILABLE: validator self-test does not launch a browser', layoutDNA: { primaryAnchor: 'live incident queue', navigationModel: 'persistent workspace rail', primaryRegion: 'map beside ranked exception list', contentTopology: 'linked live records', informationDensity: 'compact high density', interactionModel: 'assign filter reroute resolve', mediaStrategy: 'operational map and status marks', responsiveTransformation: 'map switches to record-first mobile sequence' } },
+      { id: 'C', thesis: 'Curated visual storytelling.', tradeoff: 'Less efficient for bulk data.', rejectionReason: 'Not the target product.', prototypeEvidence: 'NOT AVAILABLE: validator self-test does not launch a browser', layoutDNA: { primaryAnchor: 'featured visual artifact', navigationModel: 'editorial project index', primaryRegion: 'asymmetric image-led canvas', contentTopology: 'curated case-study narrative', informationDensity: 'paced spacious editorial', interactionModel: 'browse select inspect story', mediaStrategy: 'large authored project imagery', responsiveTransformation: 'ordered single-column visual story' } },
     ],
   };
   const good = validate(base);
@@ -158,6 +178,12 @@ function selfTest() {
   radical.baselineEvidence = 'existing route screenshot at desktop and mobile widths';
   const radicalResult = validate(radical);
   if (radicalResult.ok) throw new Error('Radical redesign fixture passed despite matching the baseline.');
+  const incompleteBaseline = structuredClone(radical);
+  delete incompleteBaseline.baseline.primaryRegion;
+  if (validate(incompleteBaseline).ok) throw new Error('Radical redesign passed with an incomplete baseline fingerprint.');
+  const renderer = structuredClone(base);
+  renderer.rendererAvailable = true;
+  if (validate(renderer).ok) throw new Error('Rendered mode passed without screenshot evidence.');
   const cosmetic = structuredClone(base);
   cosmetic.candidates[1].layoutDNA = { ...cosmetic.candidates[0].layoutDNA, palette: 'cream-and-orange' };
   const cosmeticResult = validate(cosmetic);
@@ -165,7 +191,8 @@ function selfTest() {
   console.log('PASS: 3-way structural divergence is enforced.');
   console.log('PASS: synonym-like labels are normalized before comparison.');
   console.log('PASS: cosmetic-only changes cannot satisfy the structural fingerprint.');
-  console.log('PASS: radical redesign must differ from a captured baseline.');
+  console.log('PASS: radical redesign must differ from a complete captured baseline.');
+  console.log('PASS: when rendering is available, all three candidates need screenshot evidence.');
 }
 
 const args = process.argv.slice(2);
@@ -181,7 +208,7 @@ if (args[0] === '--self-test') {
   let doc;
   try { doc = JSON.parse(fs.readFileSync(inputPath, 'utf8')); }
   catch (error) { console.error(`Could not read JSON at ${inputPath}: ${error.message}`); process.exit(2); }
-  const result = validate(doc);
+  const result = validate(doc, path.dirname(inputPath));
   console.log(JSON.stringify(result, null, 2));
   process.exit(result.ok ? 0 : 1);
 }

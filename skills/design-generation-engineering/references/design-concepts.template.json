@@ -2,15 +2,15 @@
   "project": "REPLACE_WITH_PROJECT_NAME",
   "intent": "new-product",
   "selected": "B",
-  "referenceNotes": "List the useful lessons learned and explicitly state what was not copied. If research was unavailable, say so.",
-  "baselineEvidence": "Required for radical-redesign: route, screenshot/source, browser, and viewport.",
+  "referenceNotes": "List useful lessons and what was not copied. If research was unavailable, state so.",
+  "baselineEvidence": "For radical-redesign: baseline route, screenshot/source, browser, and viewport.",
   "baseline": null,
   "candidates": [
     {
       "id": "A",
       "thesis": "Because [user] needs to [task], this concept organizes [information] around [interaction].",
       "tradeoff": "What this structure makes harder or less efficient.",
-      "prototypeEvidence": "path-or-url-to-rendered-grayscale-prototype",
+      "prototypeEvidence": "artifacts/concept-a.png",
       "rejectionReason": "Required for every non-selected candidate.",
       "layoutDNA": {
         "primaryAnchor": "specific first-screen focus",
@@ -27,7 +27,7 @@
       "id": "B",
       "thesis": "Because [user] needs to [task], this concept organizes [information] around [interaction].",
       "tradeoff": "What this structure makes harder or less efficient.",
-      "prototypeEvidence": "path-or-url-to-rendered-grayscale-prototype",
+      "prototypeEvidence": "artifacts/concept-b.png",
       "layoutDNA": {
         "primaryAnchor": "different first-screen focus",
         "navigationModel": "different orientation model",
@@ -43,7 +43,7 @@
       "id": "C",
       "thesis": "Because [user] needs to [task], this concept organizes [information] around [interaction].",
       "tradeoff": "What this structure makes harder or less efficient.",
-      "prototypeEvidence": "path-or-url-to-rendered-grayscale-prototype",
+      "prototypeEvidence": "artifacts/concept-c.png",
       "layoutDNA": {
         "primaryAnchor": "another distinct first-screen focus",
         "navigationModel": "another distinct orientation model",
@@ -53,7 +53,9 @@
         "interactionModel": "another distinct primary user operation",
         "mediaStrategy": "another distinct media role",
         "responsiveTransformation": "another distinct mobile transformation"
-      }
+      },
+      "rejectionReason": "Required for every non-selected candidate."
     }
-  ]
+  ],
+  "rendererAvailable": true
 }
