@@ -1,0 +1,50 @@
+{
+  "interface": {
+    "capabilities": [
+      "Interactive"
+    ],
+    "category": "Developer Tools",
+    "defaultPrompt": [
+      "Audit this web project and give me the highest-impact fixes first.",
+      "Turn this website requirement into a production-ready UI architecture and implementation plan.",
+      "Build reliable visual regression coverage for this web project.",
+      "Run the Web Forge release gate on this web project before I ship it."
+    ],
+    "developerName": "mohamed eslam",
+    "displayName": "Web Forge",
+    "longDescription": "An end-to-end workflow for developers and coding agents: understand a product, design its interface, implement it in the existing stack, evaluate accessibility, build reliable tests, validate real browser behavior and visual changes, improve performance and security, and verify release readiness with evidence.",
+    "shortDescription": "Build, test, and ship better web"
+  },
+  "name": "web-forge",
+  "version": "0.6.0",
+  "description": "An end-to-end web engineering copilot for product-aware design, implementation, accessibility, testing, visual regression, browser QA, performance, security, and evidence-based release verification.",
+  "author": {
+    "name": "mohamed eslam",
+    "email": "mohmaedeslam555@gmail.com"
+  },
+  "keywords": [
+    "web development",
+    "frontend engineering",
+    "web design",
+    "UI architecture",
+    "design systems",
+    "responsive design",
+    "accessibility engineering",
+    "WCAG 2.2",
+    "WCAG-EM 2.0",
+    "ARIA",
+    "browser testing",
+    "test engineering",
+    "Playwright",
+    "visual regression",
+    "screenshot testing",
+    "Storybook",
+    "performance",
+    "Core Web Vitals",
+    "web security",
+    "SEO",
+    "code review",
+    "release gate"
+  ],
+  "skills": "./skills"
+}
