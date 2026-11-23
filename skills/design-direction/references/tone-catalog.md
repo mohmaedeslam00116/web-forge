@@ -1,29 +1,22 @@
-# Visual language ingredients
+# Tone as a set of decisions, not a style menu
 
-Use this as vocabulary, not as a fixed list of themes. A final direction may combine ingredients from several rows, reject every row, or use a platform convention. Never select a label and copy its whole recipe.
+Do not select a named aesthetic preset. Specify tone through observable choices and explain why they fit the product.
 
-| Ingredient family | Possible characteristics | Useful when | Risk when overused |
-|---|---|---|---|
-| Editorial | strong type scale, columns, captions, pull quotes, deliberate margins | reading, cultural work, portfolios, case studies | serif decoration with no content hierarchy |
-| Instrumental | measured grids, visible status, tabular numerals, precise labels | technical tools, monitoring, data-heavy tasks | decorative mono, fake readouts, neon overload |
-| Material / tactile | surfaces, texture, physical references, imperfect edges | craft, hospitality, product stories, local services | fake paper grain and rustic filters |
-| Gallery / immersive | large media, controlled transitions, minimal chrome | portfolios, archives, art, media showcases | hiding navigation or context for spectacle |
-| Transactional | price and options clarity, comparison, trust signals, explicit actions | commerce, booking, subscriptions | overloading the screen with badges and urgency |
-| Playful | expressive type, distinct shapes, lively feedback, color roles | children, creative tools, learning, entertainment | random motion, low contrast, childishness without audience fit |
-| Institutional | stable hierarchy, restrained ornament, clear navigation, evidence | public services, education, finance, healthcare | sterile sameness or excessive formality |
-| Raw / direct | visible structure, strong contrast, minimal chrome, plain language | independent brands, cultural statements, creator tools | confusing roughness with lack of craft |
-| Platform-native | familiar controls, expected navigation, accessibility conventions | operational apps and frequent-use interfaces | unnecessary customization of familiar controls |
+## Tone dimensions to resolve
 
-## Build a direction from independent dimensions
+- **Authority:** understated, expert, institutional, collaborative, or exploratory.
+- **Energy:** quiet, focused, urgent, playful, ceremonial, or expressive.
+- **Human presence:** tool-like, editorial, conversational, community-led, or artifact-centered.
+- **Precision:** approximate, flexible, exact, or audit-oriented.
+- **Warmth:** neutral, welcoming, intimate, formal, or intentionally austere.
+- **Cultural register:** local vocabulary, formality, symbolism, imagery, and conventions appropriate to the actual audience.
 
-Choose only the dimensions that matter:
+These are independent dimensions, not presets to combine into a fashionable label. Choose only those needed to make decisions.
 
-- **Composition:** centered / asymmetric / split / modular / linear / layered / document-like.
-- **Density:** spacious / balanced / compact / data-dense.
-- **Hierarchy:** type-led / image-led / task-led / data-led / navigation-led.
-- **Geometry:** sharp / rounded / organic / modular / ornamental / neutral.
-- **Color:** monochrome / tonal / material-derived / high-contrast signal / semantic multi-color.
-- **Media:** photography / product capture / illustration / diagram / live data / none.
-- **Motion:** still / functional / guided / expressive / narrative.
+## Translate tone into concrete design choices
 
-These axes are independent. Do not let selecting "editorial" automatically choose a serif, cream background, and large empty margins. Use the product evidence to decide each axis.
+For each resolved dimension, state its consequence for hierarchy, typography, copy, color contrast, geometry, imagery, animation, and interaction feedback. Avoid unsupported claims such as “premium”, “modern”, or “minimal” without describing what the user will see and why.
+
+## Keep tone subordinate to task
+
+A playful tone must not obscure a serious decision. A formal tone must not make routine recovery intimidating. A premium tone is not synonymous with dark backgrounds and gold accents. A minimal tone is not permission to hide labels, affordances, or supporting information.

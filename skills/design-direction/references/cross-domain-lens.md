@@ -1,13 +1,31 @@
-# Cross-domain lenses
+# Cross-domain design lens
 
-Use a lens only when it clarifies the product. Choose one or more principles, not an entire style recipe.
+Use domain knowledge to find meaningful interface logic, not to decorate the page with a metaphor.
 
-- **Cinema:** framing, point of focus, reveal sequence, foreground/background, visual continuity. Useful for storytelling and immersive media; avoid cinematic motion in routine tools.
-- **Architecture:** scale, thresholds, wayfinding, circulation, structural rhythm, material. Useful for complex navigation and spatial relationships; avoid turning every page into a building metaphor.
-- **Editorial / print:** hierarchy, columns, measure, captions, annotation, index, folio. Useful for reading and structured content; avoid ornamental print details without editorial content.
-- **Industrial design:** affordance, grip, control placement, materials, form following function. Useful for operational controls and product configuration; do not invent physicality for its own sake.
-- **Cartography:** overview/detail, layers, legends, orientation, routes, scale. Useful when location or relationships matter; avoid map motifs without geographic information.
-- **Music / performance:** tempo, repetition, contrast, pause, crescendo. Useful for sequencing and learning experiences; avoid motion or sound that delays task completion.
-- **Scientific visualization:** units, provenance, uncertainty, scale, comparison, annotation. Useful for data and analytical tools; never imply precision the source data does not support.
-- **Retail merchandising:** discovery, comparison, product grouping, price visibility, trust, stock. Useful for commerce; avoid urgency and persuasion tricks that undermine informed choice.
-- **UX / service design:** task paths, feedback, recovery, progressive disclosure, consistency, accessibility. Useful on every surface; adapt its expression to context.
+## Explore the product's own world
+
+Look for:
+- physical or conceptual objects users handle;
+- verbs and transitions in the user's workflow;
+- relationships that can be seen spatially, chronologically, hierarchically, or comparatively;
+- artifacts users create, inspect, sign, publish, or maintain;
+- terminology and visual conventions users already understand;
+- trust signals and consequences unique to the domain.
+
+## Convert meaning into interface behavior
+
+A useful metaphor must improve at least one of: recognition, orientation, prediction, memory, decision quality, or task speed.
+
+| Domain clue | Possible interface consequence | Validation question |
+|---|---|---|
+| Chronology matters | Timeline, ledger, sequence, or history view | Does time order explain the user's decision? |
+| Geography matters | Map paired with list/table and accessible text alternative | Is location actually central to the task? |
+| Hierarchy matters | Tree, outline, nested index, or drill-down | Can users understand depth and current position? |
+| Comparison matters | Aligned columns, difference view, or comparison ledger | Are values directly comparable? |
+| Creation matters | Canvas/editor with contextual tools and recovery | Does the artifact remain the main object? |
+| Exceptions matter | Prioritized queue with reason and next action | Does it help resolve risk, not just display alerts? |
+| Collection matters | Searchable index with filters and meaningful previews | Are the collection's taxonomies real? |
+
+## Reject decorative metaphors
+
+Do not add gears to a maintenance app, charts to a finance app, maps to any logistics screen, or paper textures to any editorial product merely because the association is obvious. The metaphor must express useful structure and be tested with actual content.

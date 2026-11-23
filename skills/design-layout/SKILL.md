@@ -1,67 +1,70 @@
 ---
 name: design-layout
-description: Plans information architecture, page composition, grids, hierarchy, responsive transformations, and interaction layout for websites and applications. Use when composing a page, choosing section order, structuring a dashboard, or fixing layout and responsive behavior.
+description: Translates a product's real content and user tasks into a distinctive page or workspace composition, with hierarchy and responsive behavior defined before component styling.
 ---
 
-# Design Layout
+# Design Layout — compose the information, not a template
 
-Let the content and the visitor's task determine the structure. Do not begin with a section recipe.
+Layout is the organization of a task and its content in space. Start from the product's information model and the user's next decision. Do not begin with a standard page recipe, grid preset, or component library demo.
 
-## 1. Start from the job and content
+## 1. Map the actual material
 
-- Identify the primary task or question for the surface.
-- Inventory real content, data, controls, media, and supporting evidence.
-- Rank items by importance, frequency, urgency, and decision value.
-- Choose the reading or action sequence that reduces effort.
-- Remove sections that do not serve the visitor or a real business requirement.
+For the target route or surface, list:
+- the primary task and user question;
+- the content objects, fields, media, and relationships;
+- the most important action and evidence needed before it;
+- secondary information and its importance;
+- states: initial, populated, empty, loading, error, success, disabled, permission-limited, or offline as applicable;
+- content extremes: long names, dense records, missing imagery, localization, and real Arabic/mixed-direction text.
 
-## 2. Choose an appropriate composition
+Use real sample data whenever possible. Placeholder content conceals layout failures.
 
-Possible structures include linear narrative, editorial columns, task workspace, split comparison, guided sequence, data table, timeline, collection index, map, product configurator, gallery, or mixed composition.
+## 2. Choose composition from the content model
 
-These are options, not an expected checklist. Use the minimum structures that explain the content. A page does not need four to six different section patterns to look designed.
+Draw a quick structure before building components. Explore whether the information behaves primarily as:
+- a continuous reading or persuasive sequence;
+- a set of records that must be compared or scanned;
+- a collection that needs indexing and discovery;
+- a guided process with progress and recovery;
+- a spatial relationship or freeform canvas;
+- an ongoing stream of changing events;
+- an editor or control surface;
+- a mixed structure with a dominant primary model.
 
-Consider independently:
-- alignment and composition;
-- density and whitespace;
-- column count and container width;
-- persistent navigation or chrome;
-- media placement and crop;
-- grouping, dividers, cards, and tables;
-- how primary and secondary actions are distinguished.
+These are ways to understand content, not a menu of canned templates. The same industry can require different compositions, and unrelated industries can share a structure when their tasks genuinely match.
 
-Do not force a 12-column desktop grid, a universal 8-point rhythm, asymmetric 5/7 splits, or repeated full-width section padding. Pick a system the content can sustain and keep it coherent.
+Specify the first viewport's anchor, eye path, main content region, navigation model, grouping logic, and primary action. Avoid filling empty space with decorative cards or arbitrary metrics.
 
-## 3. Fit structure to mode
+## 3. Establish hierarchy before visual styling
 
-- **Persuade:** make the offer, proof, objections, and action easy to understand. A story-led long page, comparison, case study, or compact conversion page may be right.
-- **Operate:** optimize frequent tasks, scanning, status recognition, information density, predictable controls, and recovery. It is an application surface, not a marketing page.
-- **Read:** optimize hierarchy, measure, navigation within long content, citations, tables, and reading comfort.
-- **Experience:** let the artifact or collection lead while preserving orientation, context, and accessible controls.
+For each element decide whether it is dominant, supporting, contextual, or optional. Use position, scale, contrast, proximity, grouping, and typography to express these roles. The most important element should win the first-glance test; not every section can be equally prominent.
 
-## 4. Navigation and interaction structure
+Prefer the least explicit containment that still makes relationships clear. A card is not the default container. Use open space, typographic hierarchy, dividers, tables, rows, panels, or cards according to the relationship being communicated.
 
-Choose navigation according to route count, user frequency, information hierarchy, platform convention, and screen size. Keep labels specific and the current location clear. Do not apply a fixed maximum navigation count without considering the product.
+## 4. Define navigation from product structure
 
-For every interactive region, define relevant states: default, active, focus, disabled, loading, empty, error, success, and permission or offline states as needed. Persistent chrome should not jump in height when its content changes.
+Choose global, local, contextual, and in-flow navigation according to route topology, task frequency, and user orientation. A sidebar is not a universal app shell; a top navigation is not mandatory for every public site. Explain why the chosen navigation makes common tasks easier.
 
-## 5. Responsive transformation
+## 5. Make responsive behavior a composition decision
 
-Do not shrink desktop layouts and call them mobile. Decide at each breakpoint what should:
+Do not scale desktop proportionally and call it responsive. For each meaningful viewport class, specify:
+- what remains visible and persistent;
+- what reorders because the task sequence changes;
+- what stacks or changes from columns to a single flow;
+- what becomes a different interaction/control;
+- what can scroll within its own region;
+- what becomes secondary or unavailable, with a usable alternative.
 
-- reorder because the task sequence changes;
-- stack because columns no longer have enough room;
-- collapse into navigation or disclosure;
-- become a different control;
-- remain a horizontally scrollable data view with clear affordance;
-- disappear because it is nonessential at that size.
+Allow layouts to flex between breakpoints. Preserve readable measures, usable controls, and orientation. Avoid fixed pixel assumptions where intrinsic layout can express the constraint.
 
-Use intrinsic sizing, fluid type, `minmax()`, `min-width: 0`, and logical properties. Ensure touch targets and controls follow platform and accessibility requirements.
+## 6. Component selection is subordinate to composition
 
-## 6. Validate the structure
+Choose components after the page structure is clear. Reuse existing accessible project components where they fit. Do not build every content item as a card, every statistic as a metric tile, or every action as a pill. Document new shared components with both **Use when** and **Do not use when** guidance.
 
-Render representative routes and states at the project's relevant breakpoints. Measure horizontal overflow; inspect clipped content, awkward stacking, table behavior, focus order, and sticky elements. Fix the information architecture or grid before adding offsets and one-off CSS patches.
+## 7. Validate with real content and rendered views
 
-## References
+Inspect at representative narrow and wide widths. Test long text, empty states, actual media, keyboard order, zoom/reflow, RTL when supported, and all important task states. Measure overflow; investigate the cause instead of hiding it with arbitrary offsets. Revisit hierarchy and composition before adding CSS patches.
 
-- `references/page-patterns.md` — structural examples, not mandatory section order.
+## Deliverable
+
+Provide a route/surface composition map, hierarchy, component choices with rationale, first-viewport plan, responsive transformations, interaction-state coverage, and measurable checks. Keep it concise enough to implement.

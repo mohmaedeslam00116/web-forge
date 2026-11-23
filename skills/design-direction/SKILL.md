@@ -1,94 +1,45 @@
 ---
 name: design-direction
-description: Defines the design direction before substantial interface work by analysing the surface purpose, audience, task, content, constraints, and existing brand, then selecting a context-specific visual language. Use at the start of a new site, major redesign, or when a result feels generic.
+description: Establishes a distinctive, evidence-based visual identity for a specific product or major interface. Use after inspecting the product and before token styling or high-fidelity implementation.
 ---
 
-# Design Direction
+# Design Direction — product identity, not theme selection
 
-Choose a visual language that makes sense for this particular interface. A direction is a set of connected decisions, not a preset theme name.
+A design direction is the visible consequence of product context, task hierarchy, content, and brand. It is not a moodboard label, industry palette, or list of trendy visual effects.
 
-## 1. Read the actual context
+## Required sequence
 
-Record only what affects design:
+1. Run `design-concept-engineering` for new products, new major surfaces, or generic-design complaints. Use its context ledger, design thesis, structural candidates, and anti-template challenge.
+2. Inspect the existing product and Design Passport. Preserve recognizable patterns that users already understand; do not erase product identity for the sake of novelty.
+3. Derive the visual direction from the chosen composition and real content. Decide what deserves emphasis, what remains quiet, and why.
+4. Define the visual grammar and document it. The grammar must cover composition, hierarchy, typography, color roles, geometry, media, component use, interaction, motion, and responsive behavior as applicable.
+5. Hand the selected direction to `design-layout` and `design-system`. Layout translates the content model into a page composition; the design system translates the grammar into reusable implementation rules.
+6. Run `design-review` against the rendered result and the saved Design Passport.
 
-- **Surface mode:** Persuade, Operate, Read, or Experience.
-- **Primary job:** what the visitor must understand, decide, or complete.
-- **Audience and setting:** who is using it, on what device, in what environment, with what level of expertise.
-- **Behavior:** frequency of use, task criticality, time pressure, and consequences of mistakes.
-- **Content shape:** prose, products, images, records, charts, forms, media, or mixed content; estimate its real density.
-- **Trust and tone:** what makes the product credible, approachable, authoritative, exciting, calm, or memorable.
-- **Constraints:** existing identity, platform conventions, accessibility, language/RTL, framework, performance, and available assets.
+## Direction selection rules
 
-Do not invent a detailed persona when the brief does not support one. State uncertainty instead of pretending to know the audience.
+- Never start by selecting from a fixed list of styles, aesthetics, industries, or palettes.
+- Never make three candidates that share the same wireframe and differ only in skin.
+- Do not default to centered hero, bento grid, three feature cards, floating mockup, dark dashboard, gradient, glass surface, oversized radii, or universal sidebar.
+- These patterns are not globally banned. Use one only when the product evidence supports it, and record the reason when it materially shapes the interface.
+- Do not equate originality with usability. Familiar conventions are correct when they help users complete frequent or risky tasks.
+- A product can have several surface modes. Do not force the marketing site, workspace, documentation, and reader onto one page template.
+- Do not use palette changes to disguise structural sameness.
 
-## 2. Develop materially different direction hypotheses
+## Distinctiveness standard
 
-For substantial greenfield work, create two or three internal candidates. Each candidate must differ in at least three of these dimensions:
+A direction must be recognizable through at least two structural decisions and one product-specific content or interaction decision. Color and typography can reinforce the direction but cannot be the only evidence of it.
 
-- composition: centered, asymmetrical, split, modular, linear, immersive, or document-like;
-- density: sparse, balanced, compact, or information-dense;
-- hierarchy: typographic, image-led, data-led, navigation-led, or action-led;
-- type character: editorial, neutral, technical, humanist, expressive, or platform-native;
-- geometry: sharp, soft, modular, organic, ornamental, or nearly invisible;
-- media: product capture, editorial photography, illustration, diagrams, live data, or no prominent media;
-- color behavior: monochrome, tonal, high-contrast signal, material-derived, or multi-color with clear semantic roles;
-- motion: still, functional, guided, expressive, or narrative.
+## Output
 
-Do not create three versions that only change colors and font names. Do not select from a fixed list of trend labels. Combine traits when that is more truthful than a single label.
+For substantial work, deliver:
+- a concise design thesis;
+- the chosen composition and why it fits;
+- important rejected alternatives and why they lost;
+- the functional signature or reason for omitting one;
+- project-specific visual grammar;
+- components/patterns to use and patterns to avoid;
+- responsive and accessibility implications;
+- the Design Passport location.
 
-Choose the direction that best balances:
-1. task clarity and usability;
-2. product and audience fit;
-3. credibility and emotional tone;
-4. distinctiveness from category clichés and from this project's other surfaces;
-5. accessibility, performance, and implementation feasibility.
-
-Do not maximize novelty. Familiar conventions may be the best choice for frequent operational tasks, commerce, forms, and safety-critical flows.
-
-## 3. Derive the product's visual material
-
-Find meaningful visual material in the product's real world: objects, workflows, data, places, tools, textures, terminology, or content structures. Use these as possible sources for:
-
-- layout logic and navigation;
-- image selection or illustration;
-- data visualization and visual metaphors;
-- shape, border, surface, and depth decisions;
-- naming and microcopy.
-
-A metaphor is useful only when it improves recognition or meaning. Avoid decorative motifs that do not help the visitor.
-
-## 4. Define a signature through function
-
-Choose one recognizable design move that supports the product's job. It may be a distinctive index, product selector, comparison ledger, editorial annotation system, map, workflow rail, data timeline, gallery treatment, or interaction pattern.
-
-It must be useful and repeatable where appropriate. Do not add a decorative signature element just to satisfy this section.
-
-## 5. Keep the intensity budget contextual
-
-Decide where attention should peak. A marketing surface may need one persuasive first-screen moment and a strong proof point. An operational dashboard may need almost no spectacle; its strongest moment may be a clear status hierarchy or fast task flow. A reading surface may reserve emphasis for typography and navigation.
-
-Use strong imagery, oversized type, saturated color, parallax, or complex motion only where they improve meaning. Quiet is not mandatory, and spectacle is not mandatory.
-
-## 6. Save a project-local Design Passport
-
-For substantial work, record the selected direction using `references/design-passport-template.md` in `DESIGN.md` or the project's established design documentation location. Include surface-specific differences when a product has Persuade, Operate, Read, and Experience surfaces.
-
-Before a later redesign, inspect that record and current implementation. Preserve intentional decisions; change only what is needed. Do not carry the visual fingerprint into unrelated projects.
-
-## 7. Direction quality gate
-
-Before system or layout work, answer:
-
-- Could this direction be pasted onto almost any unrelated product without changing its logic? If yes, it is too generic.
-- Does it differ from a default AI template in composition and hierarchy, not just palette?
-- Does it avoid copying a current design trend without a product reason?
-- Is every distinctive choice useful, credible, and feasible?
-- Can the direction be recognized from the first viewport and a few key components?
-
-## References
-
-- `references/design-passport-template.md`
-- `references/tone-catalog.md` — visual ingredients, not a menu of mandatory styles.
-- `references/product-to-direction.md` — diagnostic questions, not fixed mappings.
-- `references/cross-domain-lens.md`
-- `references/anti-slop.md` — contextual warnings, not universal bans.
+Do not produce a long aesthetic essay when a clear set of implementable decisions is sufficient.

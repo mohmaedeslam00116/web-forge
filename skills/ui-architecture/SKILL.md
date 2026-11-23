@@ -1,34 +1,38 @@
 ---
 name: ui-architecture
-description: Use when a user has a website or web-app idea, redesign request, or feature request and needs an implementation-ready product and UI architecture with measurable acceptance criteria.
+description: Converts web product requirements into an evidence-based information architecture, route model, content model, interaction contract, and distinctive surface compositions.
 ---
-# UI Architecture
 
-Convert requirements into an implementation-ready plan without inventing unsupported product decisions or turning every request into the same shell.
+# UI Architecture — model the product before its shell
+
+The architecture should reveal what the product is and what users need to do. Do not assume every web app needs the same dashboard shell, sidebar, KPI row, card grid, or modal workflow.
 
 ## Process
-1. Extract goals, audience, primary tasks, constraints, existing brand decisions, and non-goals. Mark assumptions.
-2. Classify each requested surface by visitor success mode: Persuade (decide/act), Operate (complete a task), Read (understand), or Experience (explore). One product can need multiple modes across routes.
-3. Define information architecture and route/page map from user journeys and real content.
-4. Define page hierarchy and component responsibilities. Choose tables, lists, cards, timelines, forms, maps, or open layouts according to content—not by a fixed component recipe.
-5. Define interaction states and task recovery: default, focus, active, disabled, loading, empty, error, success, and permission/offline states where relevant.
-6. Define responsive transformations: what stacks, collapses, reorders, scrolls, or becomes a different control at each breakpoint.
-7. Define semantics, keyboard order, focus management, live regions, labels, contrast, and reduced-motion behavior.
-8. Define data boundaries and loading/error behavior without prescribing backend technology unless required.
-9. Define measurable acceptance criteria for the primary journey and important failure paths. Identify which criteria need unit, component, API/contract, browser, visual, or manual accessibility evidence.
-10. For meaningful visual work, invoke the `web-design` router and its `design-direction`, `design-system`, `design-layout`, and `design-review` skills. Preserve an existing Design Passport or design system. Do not invent a new visual system for a small isolated change.
+
+1. Extract goals, user groups, jobs, environment, business constraints, technical constraints, existing brand, and non-goals. Mark facts versus assumptions.
+2. Inspect the repository and current product. Identify framework, routes, state/data model, authentication, design system, assets, and project instructions.
+3. Model domain entities, verbs, relationships, decision points, permissions, and error/recovery paths.
+4. Build a route map from user journeys. Classify each route by its main success mode (decide, operate, read, explore, create, monitor, or another evidenced job); do not force every route into a fixed four-mode classification if that loses useful detail.
+5. Inventory actual content shapes and extremes before choosing components.
+6. Run `design-concept-engineering` for new products or materially new visual surfaces. Produce a product-specific design thesis and compare structural alternatives.
+7. Create route-level composition maps, first-viewport hierarchy, navigation model, and responsive transformations. Different tasks may require different surface structures.
+8. Define interaction states, semantics, keyboard/focus behavior, error recovery, permissions, offline/loading behavior, and reduced-motion expectations.
+9. Define measurable acceptance criteria and evidence: unit, component, contract, browser, visual, manual accessibility, or user validation as appropriate.
+10. Hand the composition to `design-layout`, the selected grammar to `design-system`, and the rendered result to `design-review`.
 
 ## Agent handoff
-Produce only sections relevant to the task:
-- Product intent and assumptions
-- Surface modes and user journeys
-- Routes and navigation
-- Page anatomy and content hierarchy
-- Component and data responsibilities
-- Interaction/state matrix
-- Responsive behavior
-- Accessibility contract
-- Acceptance criteria and test evidence plan
-- Implementation sequence
 
-The plan should be complete enough to implement, but no larger than the product requires.
+Include only applicable sections:
+- product context and assumptions;
+- domain objects, relationships, and primary jobs;
+- route map and user journeys;
+- content inventory and edge cases;
+- route-specific composition and first-screen anchor;
+- navigation and component responsibilities;
+- interaction/state and recovery model;
+- responsive transformation;
+- accessibility and localization contract;
+- acceptance criteria and test evidence plan;
+- implementation sequence and non-goals.
+
+Do not output generic feature lists or a component inventory before the product model is understood.

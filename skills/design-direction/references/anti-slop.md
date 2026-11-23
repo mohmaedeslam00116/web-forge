@@ -1,30 +1,41 @@
-# Anti-slop: contextual warning signs
+# Anti-template diagnostics
 
-This is a diagnostic list, not a global blacklist. A pattern is not wrong merely because it is common. Reject it when it appears without a reason, weakens the task, or makes unrelated products look interchangeable.
+This is not a ban list. Common patterns are useful when they solve the task. The failure is an unjustified default that appears across unrelated products or content roles.
 
-## Common defaults that need a reason
+## Structural warning signs
 
-| Default | Why it often fails | Better decision question |
+| Warning sign | Why it becomes generic | Required challenge |
 |---|---|---|
-| Purple/blue or pink/orange gradient hero | It substitutes a current AI-product stereotype for product identity | What color relationships belong to this brand, content, or environment? |
-| Inter, Roboto, or system font everywhere | A neutral UI face can flatten editorial or expressive work | Does this surface need a distinctive display voice, a platform-native system face, or one highly functional family? |
-| Three equal feature cards with icons | It gives unequal ideas equal importance and repeats a common template | Which content deserves the most space? Would a sequence, table, annotated screenshot, or single story explain it better? |
-| Centered headline, subhead, two buttons, floating mockup | It is overused and often disconnects the product image from the message | What should anchor the first viewport, and where should the user's eye travel? |
-| Glass cards over blurred blobs | It often adds decorative depth without information value | What surfaces, hierarchy, or interaction require depth? |
-| Dark mode with neon accent | It makes unrelated products inherit the same visual mood | Does the use environment, content, or brand call for a dark surface? |
-| Rounded cards and soft shadows everywhere | It removes hierarchy between controls, containers, and content | Which elements need containment, elevation, or clear edges? |
-| Bento grid as a universal page structure | It can fragment a simple story or operational workflow | Does modular discovery help this content, or would a linear / editorial / task-first layout be clearer? |
-| Decorative monospace labels and fake metadata | It adds noise and imitates technical products | Is the text real data, navigation, or annotation? |
-| Scroll fades and hover lift on every section | It makes motion predictable and distracts from content | Which state change needs motion, and what information does it communicate? |
+| Centered headline + subtitle + two CTAs + floating mockup | Ignores the actual first-screen task and content | What is the real anchor: artifact, search, record, decision, narrative, or action? |
+| Sidebar + KPI row + card grid for every application | Treats unrelated data and workflows as one dashboard | What navigation and information structure follows from the domain and task cadence? |
+| Three equal feature cards | Forces equal weight on unequal ideas | Which content is dominant, sequential, comparative, or supporting? |
+| Every object in a rounded card | Hides relationships and creates repetitive visual noise | Would a row, table, typographic group, timeline, or open canvas communicate better? |
+| Bento layout used by default | Breaks continuity when content belongs in a sequence or reading flow | Does modular discovery genuinely help the user? |
+| Same font/color/radius system across unrelated products | Changes the skin but preserves a generic visual fingerprint | What product evidence supports each design decision? |
+| Fake metrics, fake logos, fake activity | Adds false credibility and distorts hierarchy | What real data or evidence exists? If none, omit it or label a deliberate illustration. |
+| Decorative labels, pills, badges, icon rows | Adds ornament that competes with meaningful content | Does each label communicate real state, taxonomy, or navigation? |
+| Gradients, blur, glass, glow, grain, large shadows | Mimics visual trends without a product reason | What interaction or brand meaning requires this effect? |
+| Alternating section colors and scroll reveals | Creates a mechanical rhythm unrelated to content | Do the content roles actually change? What does the motion explain? |
 
-## Content and interaction warnings
+## Hard failure conditions
 
-- Empty feature names, generic claims, placeholder people, invented metrics, and generic stock teams undermine trust. Use verified or clearly illustrative content.
-- Repeating the same section rhythm six times makes the page feel mechanically assembled. Vary only when the content role changes.
-- Do not use hover as the only way to reveal essential information.
-- Do not reduce text or focus contrast to create a subtle aesthetic.
-- Do not translate English marketing copy literally into Arabic. Write for the Arabic audience and inspect bidi behavior.
+Return to concept and layout work when:
+- unrelated products repeatedly receive the same page silhouette;
+- changing the brand name and sample data leaves the structure unchanged;
+- the first viewport is decorative but does not identify the product's job;
+- actual content must be shortened, fabricated, or moved into generic tiles to fit;
+- visual variety comes only from palette, font, shadows, gradients, or border radius;
+- a shared component erases important differences between tasks;
+- desktop is shrunk onto mobile without rethinking navigation and information order.
 
-## A pattern is justified when
+## When a common pattern is justified
 
-It improves recognition, task speed, trust, accessibility, brand continuity, or content comprehension. Record the reason in the Design Passport when the choice is unusual or likely to be questioned.
+A conventional pattern is justified when it improves recognition, speed, accuracy, trust, accessibility, platform fit, or recovery. Write the reason in the Design Passport when the pattern is likely to become a dominant visual feature.
+
+## Correction sequence
+
+1. Revisit user job and domain model.
+2. Rebuild the content hierarchy.
+3. Change the page silhouette / navigation / first-screen anchor.
+4. Change the content grouping and component grammar.
+5. Only then adjust typography, color, geometry, and polish.
