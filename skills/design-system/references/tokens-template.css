@@ -1,0 +1,66 @@
+/*
+  Semantic token checklist, not a ready-made theme.
+  Replace every placeholder using the project's Design Passport before use.
+  Do not copy one project's values into unrelated projects by default.
+*/
+:root {
+  /* Foreground roles */
+  --fg-primary: REPLACE_WITH_PROJECT_VALUE;
+  --fg-secondary: REPLACE_WITH_PROJECT_VALUE;
+  --fg-muted: REPLACE_WITH_PROJECT_VALUE;
+
+  /* Surface roles */
+  --bg-canvas: REPLACE_WITH_PROJECT_VALUE;
+  --bg-surface: REPLACE_WITH_PROJECT_VALUE;
+  --bg-overlay: REPLACE_WITH_PROJECT_VALUE;
+
+  /* Edges and interaction */
+  --border-subtle: REPLACE_WITH_PROJECT_VALUE;
+  --border-default: REPLACE_WITH_PROJECT_VALUE;
+  --border-strong: REPLACE_WITH_PROJECT_VALUE;
+  --accent: REPLACE_WITH_PROJECT_VALUE;
+  --accent-hover: REPLACE_WITH_PROJECT_VALUE;
+  --focus-ring: REPLACE_WITH_PROJECT_VALUE;
+
+  /* Semantic roles */
+  --state-success: REPLACE_WITH_PROJECT_VALUE;
+  --state-warning: REPLACE_WITH_PROJECT_VALUE;
+  --state-danger: REPLACE_WITH_PROJECT_VALUE;
+  --state-info: REPLACE_WITH_PROJECT_VALUE;
+
+  /* Type roles */
+  --font-body: REPLACE_WITH_PROJECT_FONT_STACK;
+  --font-display: REPLACE_WITH_PROJECT_FONT_STACK;
+  --font-mono: REPLACE_WITH_PROJECT_FONT_STACK;
+  --text-body: REPLACE_WITH_PROJECT_SCALE;
+  --text-heading: REPLACE_WITH_PROJECT_SCALE;
+  --line-body: REPLACE_WITH_PROJECT_LINE_HEIGHT;
+  --line-heading: REPLACE_WITH_PROJECT_LINE_HEIGHT;
+
+  /* Layout roles: choose a scale appropriate to the interface */
+  --space-unit: REPLACE_WITH_PROJECT_UNIT;
+  --content-measure: REPLACE_WITH_PROJECT_MEASURE;
+  --content-max: REPLACE_WITH_PROJECT_MAX_WIDTH;
+  --radius-control: REPLACE_WITH_PROJECT_RADIUS;
+  --radius-surface: REPLACE_WITH_PROJECT_RADIUS;
+  --elevation-surface: REPLACE_WITH_PROJECT_ELEVATION;
+
+  /* Motion roles */
+  --motion-fast: REPLACE_WITH_PROJECT_DURATION;
+  --motion-standard: REPLACE_WITH_PROJECT_DURATION;
+  --motion-ease: REPLACE_WITH_PROJECT_EASING;
+}
+
+/* Keep semantic meaning independent of theme values. */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
