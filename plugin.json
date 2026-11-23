@@ -4,7 +4,7 @@
     "email": "mohamedeslam555@gmail.com",
     "name": "mohamed eslam"
   },
-  "description": "An end-to-end web engineering copilot with a rebuilt product-specific design engine, implementation, accessibility, testing, browser QA, visual regression, performance, security, and evidence-based release verification.",
+  "description": "A product-specific web engineering copilot with rendered structural design exploration, measurable divergence gates, implementation, accessibility, testing, browser QA, performance, security, and release verification.",
   "extensions": {
     "com.openai": {
       "interface": {
@@ -13,14 +13,14 @@
         ],
         "category": "Developer Tools",
         "defaultPrompt": [
-          "Redesign this interface from its actual product context; avoid generic AI templates and prove the composition is product-specific.",
-          "Diagnose why this design feels generic and rebuild its hierarchy and layout rather than changing only its colors.",
-          "Turn this website requirement into an implementation-ready product model, distinctive composition, and design system.",
-          "Run the Web Forge release gate and report evidence, failures, and unverified areas."
+          "Create a product-specific interface. Inspect the actual product and content, generate three structurally distinct rendered concepts, run the design divergence gate, then implement and review the selected concept.",
+          "Redesign this interface radically. Capture the old structure, explore three rendered alternatives, prove structural divergence from the baseline, and verify the final browser result.",
+          "Audit this website for repeated AI-template patterns and identify structural fixes before cosmetic changes.",
+          "Run the Web Forge release gate and report PASS, FAIL, and NOT VERIFIED with evidence."
         ],
         "developerName": "mohamed eslam",
         "displayName": "Web Forge",
-        "longDescription": "A product-aware web design and engineering workflow. Its rebuilt design engine models users, tasks, domain content, environment, brand, and technical constraints before generating distinct structural concepts; it then defines a project-specific visual grammar, implements it, and verifies the rendered result. Includes accessibility, testing, visual regression, browser QA, performance, security, and evidence-based release gates.",
+        "longDescription": "A product-first web design and engineering workflow. It models real user tasks and content, requires three structurally different rendered concepts before substantial implementation, validates their layout fingerprints, then builds and verifies the selected interface with accessibility, testing, browser QA, performance, and security evidence.",
         "shortDescription": "Design with product context. Build and verify."
       }
     }
@@ -46,8 +46,14 @@
     "Core Web Vitals",
     "web security",
     "SEO",
-    "release gate"
+    "release gate",
+    "design generation engineering",
+    "design exploration",
+    "structural design",
+    "product-specific UI",
+    "anti-template design",
+    "wireframe prototyping"
   ],
   "name": "web-forge",
-  "version": "0.7.0"
+  "version": "0.8.0"
 }

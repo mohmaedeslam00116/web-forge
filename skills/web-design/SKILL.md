@@ -1,47 +1,40 @@
 ---
 name: web-design
-description: End-to-end web design and implementation router that creates product-specific interfaces, prevents generic template repetition, and verifies rendered results.
+description: Product-specific web design and implementation router that forces structural concept exploration, rendered proof, and anti-template validation for meaningful design work.
 ---
 
-# Web Design — product-specific design and engineering
+# Web Design — discover, generate, render, verify
 
-The job is to build a useful, distinctive, accessible, and technically sound interface—not to apply a familiar AI-generated theme. The design must follow the product's users, work, content, environment, and existing identity.
+The interface must follow the product's real tasks, content, users, brand, and environment. Do not start by applying a familiar UI shell. Do not call a palette change a redesign.
 
-## Route by user intent
+## Route by intent
 
-| Request | Required path | Deliverable |
-|---|---|---|
-| New website/product or major redesign | `ui-architecture` → `design-concept-engineering` → `design-direction` → `design-layout` → `design-system` → `implementation-workflow` → `design-review` | Product model, distinct concept, composition, design grammar, working interface, evidence review |
-| “Looks generic”, same design again, redesign rejected | `design-review` diagnosis → `design-concept-engineering` reset → `design-direction` → `design-layout` → `design-system` → implementation → review | Root-cause diagnosis, new structural concept, rewritten composition, before/after evidence |
-| New route or feature in an existing product | Inspect Design Passport → `ui-architecture` if flow changes → `design-layout` → `design-system` as needed → implementation → `design-review` | Route-specific layout, preserved product grammar, tested task |
-| Small isolated UI fix | Inspect existing implementation → `implementation-workflow` → focused `design-review` | Minimal fix, no unnecessary redesign |
-| Design system/component library work | `design-concept-engineering` if identity is unclear → `design-system` → `design-review` | Semantic tokens, component contracts, use/anti-use guidance |
-| Accessibility work | `accessibility-engineering` + `browser-qa`; `design-system` for shared components | Scoped WCAG findings, manual and automated evidence, regression coverage |
-| Responsive/interaction behavior | `design-layout` + `browser-qa` + `design-review` | Composition transformations, browser evidence, retest |
-| Visual baselines/diffs | `visual-regression-engineering` + `browser-qa` + `design-review` | Reproducible visual comparison and reviewed diffs |
-| Performance, security, test strategy, release | `performance-engineering`, `security-review`, `test-engineering`, `release-gate` as relevant | Evidence-backed specialist outputs |
+| User request | Mandatory path |
+|---|---|
+| New product, website, or major surface | `ui-architecture` → `design-concept-engineering` → `design-generation-engineering` → `design-direction` → `design-layout` → `design-system` → implementation → `design-review` |
+| Same-looking output, generic design, rejected redesign, “make it completely different” | Capture baseline → `design-review` diagnosis → `design-concept-engineering` → `design-generation-engineering` in radical-redesign mode → direction/layout/system → implementation → rendered review |
+| New route or feature | Inspect Design Passport → `ui-architecture` if task/flow changes → `design-layout` → selected specialist(s) → implementation → focused rendered review |
+| Small isolated UI fix | Inspect current route/component → implementation → focused review; do not force a full concept process |
+| Design system/component work | `design-concept-engineering` when product model is unclear → `design-system` → test in multiple contexts → review |
+| Responsive, keyboard, accessibility, or visual regression | `design-layout` + relevant specialist (`accessibility-engineering`, `browser-qa`, `visual-regression-engineering`) + `design-review` |
+| Audit or release | `web-audit` or `release-gate`, then route findings to focused specialists |
 
-## Non-negotiable sequence for meaningful design work
+## Non-negotiable rules for meaningful design work
 
-1. **Inspect reality.** Read project instructions, code, routes, current UI, design docs, assets, content, and available references.
-2. **Build context.** Separate observed facts, user-provided facts, inference, and unknowns. Do not hallucinate user research or brand rules.
-3. **Model content and tasks.** Identify entities, relationships, primary actions, decision points, and actual content shapes.
-4. **Choose structure before skin.** Use `design-concept-engineering` to compare materially different compositions. Do not start with palette, font, rounded card, or dashboard template.
-5. **Write the Design Passport.** Record the thesis, selected composition, rejected alternatives, visual grammar, component contracts, responsive logic, and intentional exclusions.
-6. **Implement a coherent slice.** Reuse the current stack, but do not preserve generic or broken design decisions merely because they exist. Preserve intentional product conventions.
-7. **Render and challenge.** Run the product-specificity, silhouette, first-viewport, content, route, responsive, and accessibility checks in `design-review`.
-8. **Fix structural problems first.** If the page feels generic, revisit hierarchy and composition—not just color, font, gradient, shadows, or border radius.
-9. **Report honestly.** List what was implemented, what was actually inspected/tested, what failed, what remains unverified, and any trade-offs.
+1. Inspect the actual project, routes, content, assets, design system, and current render before changing it.
+2. Identify whether the task is a new product, new surface, evolutionary redesign, or radical redesign.
+3. Run `design-generation-engineering`. It requires three structurally different candidates and a machine-checkable layout fingerprint before high-fidelity implementation.
+4. Do not begin styling before a candidate is selected. Palette, font, radius, shadows, and animation do not count as structural differences.
+5. For radical redesigns, preserve the old baseline for comparison but do not let its generic shell silently dictate the new composition.
+6. Implement the selected concept. Do not drift back to the agent's usual centered hero, KPI row, three-card grid, and sidebar unless the task evidence explicitly justifies that structure.
+7. Render the actual page and review it against the candidate. If the structure has reverted, return to layout—not cosmetics.
+8. Share components for shared semantics and behavior. Do not unify unrelated surfaces merely for visual sameness.
+9. Report what was rendered and tested, what passed/failed, and what is not verified.
 
-## Anti-repetition contract
+## Anti-template failures
 
-- A single visual style must not be imposed on unrelated products.
-- A product's public marketing pages, operational workspace, reader/editor, and documentation do not automatically share one layout.
-- A new concept must differ structurally from the agent's default output. Palette-only variation is failure.
-- Cards, pills, metric tiles, sidebars, centered heroes, bento grids, and decorative metadata require a task-specific reason.
-- Shared components must encode shared meaning or behavior, not merely shared appearance.
-- Do not use arbitrary novelty, visual noise, or inaccessible interaction as a substitute for product identity.
+A significant design is **NEEDS WORK** when it changes only skin; uses the same first-screen silhouette without justification; imposes a universal page shell; ignores real content; or fails the divergence contract. Do not hide these failures with extra visual effects.
 
 ## Completion contract
 
-A significant design change is not complete until the rendered result has been checked against the Design Passport and the anti-template challenge. Distinguish **implemented**, **verified**, **needs work**, and **not verified**.
+Deliver a working interface, the Design Passport and concept manifest for meaningful design work, validator output, rendered evidence, responsive/accessibility findings, and unverified limitations. A passing structural validator alone is not design approval.

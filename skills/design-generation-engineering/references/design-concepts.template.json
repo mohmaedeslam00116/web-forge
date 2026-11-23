@@ -1,0 +1,59 @@
+{
+  "project": "REPLACE_WITH_PROJECT_NAME",
+  "intent": "new-product",
+  "selected": "B",
+  "referenceNotes": "List the useful lessons learned and explicitly state what was not copied. If research was unavailable, say so.",
+  "baselineEvidence": "Required for radical-redesign: route, screenshot/source, browser, and viewport.",
+  "baseline": null,
+  "candidates": [
+    {
+      "id": "A",
+      "thesis": "Because [user] needs to [task], this concept organizes [information] around [interaction].",
+      "tradeoff": "What this structure makes harder or less efficient.",
+      "prototypeEvidence": "path-or-url-to-rendered-grayscale-prototype",
+      "rejectionReason": "Required for every non-selected candidate.",
+      "layoutDNA": {
+        "primaryAnchor": "specific first-screen focus",
+        "navigationModel": "specific orientation model",
+        "primaryRegion": "spatial arrangement of primary regions",
+        "contentTopology": "actual information relationship and order",
+        "informationDensity": "visible density and priority",
+        "interactionModel": "primary user operation",
+        "mediaStrategy": "role of images/data/diagrams or no media",
+        "responsiveTransformation": "how the structure changes at narrow widths"
+      }
+    },
+    {
+      "id": "B",
+      "thesis": "Because [user] needs to [task], this concept organizes [information] around [interaction].",
+      "tradeoff": "What this structure makes harder or less efficient.",
+      "prototypeEvidence": "path-or-url-to-rendered-grayscale-prototype",
+      "layoutDNA": {
+        "primaryAnchor": "different first-screen focus",
+        "navigationModel": "different orientation model",
+        "primaryRegion": "different spatial arrangement of primary regions",
+        "contentTopology": "different information relationship and order",
+        "informationDensity": "different visible density and priority",
+        "interactionModel": "different primary user operation",
+        "mediaStrategy": "different media role",
+        "responsiveTransformation": "different narrow-screen structural change"
+      }
+    },
+    {
+      "id": "C",
+      "thesis": "Because [user] needs to [task], this concept organizes [information] around [interaction].",
+      "tradeoff": "What this structure makes harder or less efficient.",
+      "prototypeEvidence": "path-or-url-to-rendered-grayscale-prototype",
+      "layoutDNA": {
+        "primaryAnchor": "another distinct first-screen focus",
+        "navigationModel": "another distinct orientation model",
+        "primaryRegion": "another distinct spatial arrangement",
+        "contentTopology": "another distinct information relationship/order",
+        "informationDensity": "another distinct density/priority model",
+        "interactionModel": "another distinct primary user operation",
+        "mediaStrategy": "another distinct media role",
+        "responsiveTransformation": "another distinct mobile transformation"
+      }
+    }
+  ]
+}

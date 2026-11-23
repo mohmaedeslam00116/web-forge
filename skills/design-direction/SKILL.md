@@ -1,45 +1,36 @@
 ---
 name: design-direction
-description: Establishes a distinctive, evidence-based visual identity for a specific product or major interface. Use after inspecting the product and before token styling or high-fidelity implementation.
+description: Defines the visual grammar and product identity after structural design exploration. Use after design-generation-engineering has selected a composition and before detailed styling.
 ---
 
-# Design Direction — product identity, not theme selection
+# Design Direction — skin follows structure
 
-A design direction is the visible consequence of product context, task hierarchy, content, and brand. It is not a moodboard label, industry palette, or list of trendy visual effects.
+This skill starts **after** the product's structural concept has been explored and selected. It must not choose a trend or aesthetic preset as a substitute for a layout decision.
 
-## Required sequence
+## Required input
 
-1. Run `design-concept-engineering` for new products, new major surfaces, or generic-design complaints. Use its context ledger, design thesis, structural candidates, and anti-template challenge.
-2. Inspect the existing product and Design Passport. Preserve recognizable patterns that users already understand; do not erase product identity for the sake of novelty.
-3. Derive the visual direction from the chosen composition and real content. Decide what deserves emphasis, what remains quiet, and why.
-4. Define the visual grammar and document it. The grammar must cover composition, hierarchy, typography, color roles, geometry, media, component use, interaction, motion, and responsive behavior as applicable.
-5. Hand the selected direction to `design-layout` and `design-system`. Layout translates the content model into a page composition; the design system translates the grammar into reusable implementation rules.
-6. Run `design-review` against the rendered result and the saved Design Passport.
+Read the latest Design Passport and selected candidate from `design-concepts.json`. Confirm the selected structural fingerprint, product task, real content, existing brand constraints, route mode, and responsive behavior. If these do not exist for substantial work, return to `design-generation-engineering`; do not invent them after implementation.
 
-## Direction selection rules
+## Define the visual language
 
-- Never start by selecting from a fixed list of styles, aesthetics, industries, or palettes.
-- Never make three candidates that share the same wireframe and differ only in skin.
-- Do not default to centered hero, bento grid, three feature cards, floating mockup, dark dashboard, gradient, glass surface, oversized radii, or universal sidebar.
-- These patterns are not globally banned. Use one only when the product evidence supports it, and record the reason when it materially shapes the interface.
-- Do not equate originality with usability. Familiar conventions are correct when they help users complete frequent or risky tasks.
-- A product can have several surface modes. Do not force the marketing site, workspace, documentation, and reader onto one page template.
-- Do not use palette changes to disguise structural sameness.
+Derive the following from the selected concept:
+- **Attention distribution:** where the eye should land first, next, and last.
+- **Typography:** role hierarchy, reading measure, glyph coverage, language support, numerical alignment, and content voice.
+- **Color behavior:** brand colors, neutral surfaces, semantic status, focus, and contrast pairs. Do not begin from a fashionable palette.
+- **Geometry:** edges, radii, separators, containment, elevation, and negative space.
+- **Media direction:** subject, crop, aspect ratio, frequency, source, and whether imagery is actually needed.
+- **Motion:** only where it explains state, continuity, progress, or spatial relationships.
+- **Component grammar:** what should be a row, table, panel, index, card, canvas, list, or plain text—and why.
+- **Surface variants:** how the shared product identity changes between reading, operation, discovery, marketing, or other distinct jobs.
 
-## Distinctiveness standard
+## Hard restrictions
 
-A direction must be recognizable through at least two structural decisions and one product-specific content or interaction decision. Color and typography can reinforce the direction but cannot be the only evidence of it.
+- Do not use palette, typeface, shadows, gradients, or radii to claim structural differentiation.
+- Do not default to centered hero + two CTAs + floating mockup, equal feature cards, bento, metric tiles, left sidebar, glass panels, dark/neon surfaces, or a universal card system.
+- These patterns are allowed only when the product's task and content justify them; record the reason.
+- Do not force all routes into the same visual rhythm. Share tokens and accessible primitives where appropriate; let the composition follow each route's job.
+- Do not make novelty a goal independent of task clarity, brand recognition, accessibility, and usability.
 
 ## Output
 
-For substantial work, deliver:
-- a concise design thesis;
-- the chosen composition and why it fits;
-- important rejected alternatives and why they lost;
-- the functional signature or reason for omitting one;
-- project-specific visual grammar;
-- components/patterns to use and patterns to avoid;
-- responsive and accessibility implications;
-- the Design Passport location.
-
-Do not produce a long aesthetic essay when a clear set of implementable decisions is sufficient.
+Deliver a visual grammar with concrete rules, component usage/anti-usage contracts, surface-specific variants, type/media choices, contrast/accessibility constraints, and responsive implications. Link each major visual decision back to the selected structural concept. Then hand off to `design-system` and `design-layout`.

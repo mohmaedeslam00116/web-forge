@@ -1,74 +1,56 @@
 ---
 name: design-system
-description: Encodes a product-specific visual grammar into semantic tokens, component contracts, and usage rules without making every project look the same.
+description: Converts an approved product-specific design grammar into semantic tokens and reusable components without flattening distinct page compositions into one template.
 ---
 
-# Design System — preserve identity while enabling reuse
+# Design System — reusable rules, not a universal look
 
-A design system is not a theme generator. It records decisions already justified by a product's context and makes them reusable without erasing meaningful differences between surfaces.
+A design system should make a product coherent without making every route or unrelated product look identical. It must implement the selected Design Passport; it must not decide the composition by itself.
 
-## 1. Establish the source of truth
+## 1. Establish the authority order
 
-Inspect, in order:
-1. current Design Passport and brand documentation;
-2. existing tokens, components, patterns, and their real use;
-3. product-specific direction and page composition;
-4. platform conventions, accessibility needs, locale, and engineering constraints.
+Use this order:
+1. product tasks, domain model, and actual content;
+2. approved structural candidate and Design Passport;
+3. intentional brand identity and existing working product conventions;
+4. accessible platform conventions;
+5. existing components/tokens where they fit.
 
-Do not introduce a second token system or replace a working component library without evidence. Distinguish intentional legacy patterns from accidental drift.
+When these conflict, explain the conflict. Do not silently allow an existing generic starter theme to override a newly approved redesign.
 
-## 2. Model decisions by role, not by arbitrary quantity
+## 2. Tokenize only justified decisions
 
-Define only the token families needed by the product:
-- color roles and contrast pairs;
-- typography roles, family fallbacks, weights, measure, and language coverage;
-- spacing and layout constraints;
-- surface, border, radius, and depth roles;
-- motion and interaction feedback;
-- layers and focus treatment;
-- responsive behavior where tokenized values help.
+Define semantic roles for color, type, spacing, layout, borders, geometry, surfaces, layers, motion, focus, and responsive behavior only where useful. The scale size is a product decision. Do not force one token scale, radius, shadow, font pairing, accent, or color mode on every product.
 
-Do not force a specific number of colors, typefaces, radius levels, shadow levels, or spacing steps. A sparse editorial site and a high-density operations tool should not inherit the same token density.
+## 3. Define component contracts
 
-## 3. Encode visual grammar, not just values
-
-For each shared primitive, document:
-- its purpose and semantic role;
-- appropriate contexts;
-- contexts where it should not be used;
-- content constraints and overflow behavior;
-- default, hover, focus-visible, active, disabled, loading, error, and selected states as relevant;
+Every shared component that affects composition must document:
+- semantic purpose and data relationship;
+- **Use when** / **Do not use when**;
+- hierarchy and density expectations;
+- content/overflow constraints;
+- keyboard and accessibility behavior;
 - responsive and RTL behavior;
-- accessibility contract.
+- states: default, hover, focus-visible, selected, disabled, loading, error, empty, success as relevant.
 
-A component library of buttons, inputs, and cards is insufficient to guide composition. Provide higher-order patterns only when they represent real repeated user tasks. Do not turn one page's layout into the universal pattern for every route.
+Do not create a universal `Card` abstraction that accepts every possible content type and becomes the only layout tool. Prefer primitives and patterns that reflect real shared semantics.
 
-## 4. Protect meaningful variation
+## 4. Permit route-level variation
 
-Consistency should apply to shared meaning and behavior, not force identical structure everywhere. Different surface modes may require different density, typography measure, navigation, and media treatment while remaining part of the same product family.
+A reading route can use a narrow text measure while an operations route uses a dense record workspace, even within one product. Shared color, type, button, focus, and spacing roles may remain consistent. Do not force a shared header, sidebar, hero, grid, or card rhythm without evidence.
 
-When a component is reused, verify that the underlying task and content relationship is genuinely the same. Prefer two purposeful variants over one over-configurable component or one inappropriate universal component.
+## 5. Typography, language, and content
 
-## 5. Typography and content
+Check licensing, glyph coverage, weights, font loading, fallback metrics, reading measure, line-height, and numeral treatment. Keep content visible while fonts load. Never apply Latin letter-spacing/uppercase conventions to Arabic. Use logical CSS properties and isolate mixed-direction values.
 
-Verify font license, glyph coverage, weights, loading behavior, and fallback metrics. Keep essential content visible while fonts load. Use line length, weight, size, and spacing to form hierarchy. Do not use Latin letter-spacing or uppercase conventions on Arabic. Use tabular numerals where numeric comparison benefits.
+## 6. Surface, color, and motion decisions
 
-## 6. Color, surfaces, and depth
+Derive color from brand, content, environment, and meaning. Define contrast pairs and semantic states. Do not add gradients, blur, glass, grain, shadows, or scroll animation merely to make a page look designed. Motion must communicate state, continuity, progress, or spatial relations and respect reduced motion.
 
-Derive colors from brand, content, environment, and semantic intent. Specify text/control contrast. Do not rely on color alone for status. Avoid gradients, blur, glass, grain, heavy shadows, or cards everywhere unless they express a documented product or interaction need. Light and dark themes need explicit decisions, not mechanical inversion.
+## 7. Validate reuse instead of assuming it
 
-## 7. Motion and state
-
-Motion should clarify state, continuity, progress, or spatial relationships. Avoid universal reveal-on-scroll and hover-lift effects. Respect reduced motion. Every state transition must remain understandable without animation.
-
-## 8. Arabic, RTL, and localization
-
-Read `references/arabic-rtl.md` for Arabic-first and bilingual surfaces. Use logical properties, real localized content, appropriate direction isolation, locally meaningful copy, and locale-specific dates/numbers. RTL is not a mirrored screenshot.
-
-## 9. Validate the system in use
-
-Test the component in at least two real contexts when it is intended to be shared. If its use makes two unrelated surfaces visually indistinguishable, the pattern abstraction may be too broad. Review both the component and the compositions it enables.
+When a higher-order component/pattern is shared across different routes, inspect at least two real contexts. If reuse makes those surfaces structurally indistinguishable or forces content into the same shape, split the pattern or move the abstraction down to more appropriate primitives.
 
 ## Output
 
-Provide semantic tokens, component contracts with usage/anti-usage, surface-specific variants, implementation constraints, and validation states. Do not provide a decorative token sheet disconnected from a real composition.
+Provide semantic tokens, component contracts, surface-specific variants, anti-usage guidance, and the evidence that the system follows the selected structure. Do not deliver a decorative token sheet detached from rendered use.

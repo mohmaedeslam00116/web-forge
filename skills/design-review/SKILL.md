@@ -1,60 +1,70 @@
 ---
 name: design-review
-description: Audits rendered interfaces for task fit, product specificity, visual hierarchy, template repetition, accessibility, responsive integrity, and design-system consistency.
+description: Audits actual rendered interfaces for product fit, structural divergence, hierarchy, accessibility, responsive behavior, and implementation drift from the approved design concept.
 ---
 
-# Design Review — reject polished sameness
+# Design Review — verify the real interface, not the design story
 
-Review the actual rendered interface against real user tasks, content, and the Design Passport. Source-code inspection alone cannot establish visual quality. A polished screenshot is not proof of product fit.
+A page can be beautiful, consistent, and technically responsive while still repeating the same generic composition. Review the rendered result against user tasks, real content, the selected candidate, and (for redesigns) the captured baseline.
 
-## 1. Evidence contract
+## Gate 1 — Evidence integrity
 
-Record routes, states, viewports, browser/engine, device scale factor, locale, theme, sample data, and tool commands actually used. Render first viewport and full page for representative routes. If the browser, account, server, or artifact is inaccessible, state the boundary and mark the area NOT VERIFIED.
+Record routes, states, browser/engine and version, viewport, device scale factor, locale, theme, sample data, and commands actually run. Capture the first viewport and full page for representative routes. If the page cannot be rendered, mark visual checks NOT VERIFIED. Do not report a source-only inspection as a visual review.
 
-## 2. Task and content review
+## Gate 2 — Structural comparison
 
-Complete the primary task where possible. Check whether the screen exposes the relevant objects, relationships, evidence, action, and recovery path. Compare the actual content with the page structure. Find where layout decisions force awkward truncation, fake metrics, placeholder media, unnecessary sections, or generic copy.
+Load `design-concepts.json` and the Design Passport. Compare the rendered implementation to the selected `layoutDNA`:
+- first-screen anchor;
+- navigation topology;
+- main-region arrangement;
+- content order/topology;
+- density and measure;
+- primary interaction model;
+- media role;
+- responsive transformation.
 
-## 3. Visual hierarchy review
+For a radical redesign, also compare against the captured baseline. Confirm the intended structural changes are visible in the rendered DOM and screenshot. A changed palette with the old silhouette is NEEDS WORK.
 
-Use a first-glance/squint check: what dominates before text is read? Does that match the user's priority? Check grouping, proximity, scale, contrast, alignment, line length, and information density. If everything is loud, nothing is hierarchical. If the strongest element is decorative rather than functional, challenge the composition.
+Run the divergence validator for the candidate manifest. Treat its pass as descriptor validation only; visually inspect the prototypes and final page. A validator cannot judge whether labels are honest or whether the design is good.
 
-## 4. Product-specificity and sameness review
+## Gate 3 — Product and content fit
 
-Run these adversarial tests:
+Complete the primary user task where possible. Verify that actual product nouns, actions, relationships, content, and recovery paths shape the page. Look for fake metrics, placeholder content, decorative sections, generic hero copy, and forced card grids.
 
-- **Silhouette:** remove color, typeface, shadows, and radii mentally or in a grayscale wireframe. Is the composition still purposeful?
-- **Relabel:** imagine replacing the product name and data with those of an unrelated product. If the page would still work unchanged, product specificity is weak.
-- **First viewport:** does it begin with the actual artifact, work area, decision, or content—or a default headline, subtitle, two actions, and floating visual?
-- **Repetition:** are unrelated content roles represented with the same card, grid, title, icon, and action pattern without evidence?
-- **Route distinction:** do routes with different user jobs have appropriate structural differences? Are common patterns shared only where they help recognition and task speed?
-- **Reference dependence:** is the interface borrowing a recognizable competitor layout or trend without adapting it to the product?
+## Gate 4 — Hierarchy, craft, and distinctiveness
 
-Do not demand novelty for novelty's sake. A plain data table can be the best design. Penalize unjustified defaults, not conventionality itself.
+Ask:
+- Does the first viewport foreground the user's actual job or artifact?
+- Is visual dominance allocated to task importance rather than decoration?
+- Do unrelated sections have a reason to share the same component treatment?
+- Do routes with different jobs use appropriate compositions?
+- Could the page be relabeled as an unrelated product without changing its structure?
+- Has implementation drift restored the former shell?
 
-## 5. Responsive, accessibility, and craft review
+Do not penalize a conventional table or form when it is the right tool. Do not reward novelty that harms usability.
 
-Inspect narrow and wide viewports, long content, empty/error/loading states, keyboard focus, zoom/reflow, touch, localization, mixed-direction strings, and RTL where relevant. Check clipping, overlapping layers, horizontal overflow, sticky obstruction, dialog bounds, and layout shift after fonts/media load. Verify controls actually work.
+## Gate 5 — Responsive, accessibility, and runtime
 
-## 6. Scored gates
+Inspect key desktop and narrow mobile widths; real populated and failure/empty states; touch and keyboard paths; focus order/visibility; zoom/reflow; language/RTL; clipping/overflow; sticky elements; dialogs; font/image loading; and runtime errors. Verify important controls actually work.
 
-Use **PASS / NEEDS WORK / NOT VERIFIED** for each gate. A weighted score is optional; a blocker in task clarity or accessibility cannot be offset by visual polish.
+## Gate 6 — Fix in the right order
 
-| Gate | PASS evidence |
-|---|---|
-| Product fit | Real nouns, verbs, content, and task priorities shape the screen |
-| Structural identity | Composition is explainable through product context, not only its skin |
-| First-screen relevance | The first viewport serves the primary job |
-| Hierarchy | Dominance and grouping match importance |
-| Content integrity | Real content and edge cases fit without filler |
-| Design grammar | Components and tokens have meaningful usage rules |
-| Route coherence | Shared patterns aid recognition; distinct tasks remain distinct |
-| Responsive behavior | Composition adapts without hiding or distorting key tasks |
-| Accessibility | Relevant semantics, keyboard, focus, contrast, language, and motion checks pass |
-| Technical craft | No material clipping, layout shift, dead controls, or runtime errors |
+Fix in this order:
+1. incorrect product/task model;
+2. generic or wrong content hierarchy;
+3. wrong composition/navigation;
+4. component grammar and route variation;
+5. typography, content density, and media;
+6. color, surface, and decorative polish.
 
-## 7. Remediation order
+Do not repair a structural failure with a new gradient, typeface, shadow, radius, or animation.
 
-Fix in this order: incorrect product/task model → content hierarchy → composition/navigation → component grammar → typography and density → color/surfaces → motion and decoration. Do not attempt to repair a generic structure with cosmetic changes.
+## Verdict
 
-Re-render after changes. Report defects with route, state, viewport, reproduction, user impact, evidence, fix, and retest result. Separate aesthetic preference from measurable task or accessibility defects.
+Use PASS / NEEDS WORK / NOT VERIFIED for each applicable gate. Significant design work passes only when:
+- selected concept and rendered structure agree;
+- a radical redesign is demonstrably different from baseline or has a user-approved exception;
+- real content and the primary task shape the hierarchy;
+- responsive and accessibility checks are performed or explicitly marked NOT VERIFIED.
+
+Report exact evidence, routes/states, viewports, screenshots, fixes, and residual risks. Do not claim visual novelty from a score or screenshot diff alone.

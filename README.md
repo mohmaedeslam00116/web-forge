@@ -1,79 +1,74 @@
 # Web Forge
 
-**Version:** 0.7.0 — Design Engine Rebuild  
+**Version:** 0.8.0 — Design Generation Gate  
 **Type:** Agent skill pack / web engineering workflow  
 **Author:** Mohamed Eslam
 
-Web Forge is an end-to-end web engineering skill set for developers and coding agents. Its design workflow starts from product context, user tasks, domain content, environment, brand history, and technical constraints. It then compares materially different compositions, defines a product-specific visual grammar, implements the selected concept, and checks the rendered result for generic template repetition.
+Web Forge is an end-to-end web engineering skill set for developers and coding agents. Its design process is product-first and evidence-driven: inspect a real product and its content, generate structurally different prototypes, validate their divergence, select the best task fit, implement it, and verify the rendered result.
 
-The goal is not to make every interface look novel. It is to make each interface look and behave like the product it serves, while preserving usability, accessibility, platform expectations, and engineering quality.
+It is designed to address a common failure in AI-generated interfaces: different products receiving nearly identical page structures with only the colors, fonts, and decorative treatment changed.
 
 ## Start here
 
-For a new product, major redesign, or a design that keeps looking generic, start with:
+For a new website, major redesign, or repeated-template complaint, start with:
 
-1. [design-concept-engineering](skills/design-concept-engineering/SKILL.md) — product context, structural concept exploration, design thesis, and anti-template challenge.
-2. [web-design](skills/web-design/SKILL.md) — routes the work through architecture, concept, layout, system, implementation, and rendered review.
-
-For an existing product, inspect its Design Passport and established component system before changing visual decisions.
+1. [design-concept-engineering](skills/design-concept-engineering/SKILL.md) — model the user's job, domain objects, relationships, content, and constraints.
+2. [design-generation-engineering](skills/design-generation-engineering/SKILL.md) — create three materially different structural prototypes, validate the layout fingerprints, and carry the selected concept into implementation.
+3. [web-design](skills/web-design/SKILL.md) — route the selected composition through design direction, layout, system, implementation, and rendered review.
 
 ## Skill catalog
 
 | Skill | Responsibility |
 |---|---|
-| [design-concept-engineering](skills/design-concept-engineering/SKILL.md) | Core design reasoning engine; prevents generic AI layouts |
-| [web-design](skills/web-design/SKILL.md) | End-to-end web design and engineering router |
-| [ui-architecture](skills/ui-architecture/SKILL.md) | Product model, routes, content, interaction and acceptance criteria |
-| [design-direction](skills/design-direction/SKILL.md) | Product-specific visual identity and design grammar |
-| [design-layout](skills/design-layout/SKILL.md) | Content-first page and workspace composition |
-| [design-system](skills/design-system/SKILL.md) | Semantic tokens and component contracts without flattening product identity |
-| [design-review](skills/design-review/SKILL.md) | Rendered product-fit, hierarchy, sameness, responsive and accessibility review |
+| [design-generation-engineering](skills/design-generation-engineering/SKILL.md) | Structural concept generation, rendered candidate prototypes, divergence gate |
+| [design-concept-engineering](skills/design-concept-engineering/SKILL.md) | Product discovery, task model, real content, and design thesis |
+| [web-design](skills/web-design/SKILL.md) | End-to-end design and engineering router |
+| [ui-architecture](skills/ui-architecture/SKILL.md) | Domain model, routes, interaction and acceptance criteria |
+| [design-direction](skills/design-direction/SKILL.md) | Visual grammar after structural selection |
+| [design-layout](skills/design-layout/SKILL.md) | Content-first composition and responsive transformation |
+| [design-system](skills/design-system/SKILL.md) | Semantic tokens and reusable component contracts |
+| [design-review](skills/design-review/SKILL.md) | Rendered structural, usability, accessibility and responsive review |
 | [implementation-workflow](skills/implementation-workflow/SKILL.md) | Incremental implementation in the existing codebase |
-| [accessibility-engineering](skills/accessibility-engineering/SKILL.md) | WCAG-oriented accessibility engineering and evaluation |
-| [test-engineering](skills/test-engineering/SKILL.md) | Risk-based test strategy and reliable regression coverage |
-| [browser-qa](skills/browser-qa/SKILL.md) | Real browser behavior, responsive states, keyboard use and QA |
-| [visual-regression-engineering](skills/visual-regression-engineering/SKILL.md) | Deterministic screenshot baselines and visual diff triage |
+| [accessibility-engineering](skills/accessibility-engineering/SKILL.md) | WCAG-oriented accessibility engineering |
+| [test-engineering](skills/test-engineering/SKILL.md) | Risk-based test strategy and test reliability |
+| [browser-qa](skills/browser-qa/SKILL.md) | Real browser interactions, responsive states and QA |
+| [visual-regression-engineering](skills/visual-regression-engineering/SKILL.md) | Stable screenshot baselines and visual diff diagnosis |
 | [performance-engineering](skills/performance-engineering/SKILL.md) | Performance diagnosis and optimization |
-| [security-review](skills/security-review/SKILL.md) | Threat-informed web security review |
-| [web-audit](skills/web-audit/SKILL.md) | Evidence-backed website and web-app audits |
-| [release-gate](skills/release-gate/SKILL.md) | Evidence-based pre-release verification |
+| [security-review](skills/security-review/SKILL.md) | Threat-informed security review |
+| [web-audit](skills/web-audit/SKILL.md) | Evidence-backed website audits |
+| [release-gate](skills/release-gate/SKILL.md) | Evidence-based pre-release checks |
 
-## Design engine principles
+## What is different in 0.8.0?
 
-- Context before style: document users, tasks, product objects, content, environment, business and technical constraints.
-- Structure before skin: compare low-fidelity compositions that differ in hierarchy, navigation, content order, density and interaction—not just color and font.
-- Real content before polish: use real records, long text, media, and empty/error states where available.
-- Reuse by meaning: share components when tasks and behavior match, not simply to make every screen look alike.
-- Responsive by transformation: navigation, hierarchy, and grouping can change with available space; do not merely shrink desktop.
-- Evidence before claims: inspect rendered routes and distinguish verified, failed, and not-verified checks.
+A design description is no longer enough. Substantial work now requires:
 
-## Design quality tests
+- three candidate structures, each described by the same eight structural fields;
+- three low-fidelity prototypes rendered in a browser/project renderer when available;
+- a check that each pair differs in at least four of eight structural dimensions;
+- a captured old-layout baseline for radical redesigns, with the selected concept differing in at least four dimensions;
+- implementation of the selected structure, then a rendered review against the candidate and baseline.
 
-[tests/design-divergence-cases.md](tests/design-divergence-cases.md) contains adversarial cross-domain cases for a fiction reader, fleet dispatch workspace, and designer portfolio. The grayscale structures should remain meaningfully different because their tasks and content differ.
+The automated checker is a guardrail, not a design judge. It validates declared structural separation; it cannot determine if a concept is useful, beautiful, or usable. Those require reviewing the actual prototype and implementation.
 
-## Repository layout
+## Run the validator
 
-```text
-.
-├── .codex-plugin/plugin.json
-├── plugin.json
-├── CHANGELOG.md
-├── skills/
-│   ├── design-concept-engineering/
-│   ├── design-direction/
-│   ├── design-layout/
-│   ├── design-system/
-│   ├── design-review/
-│   └── ...specialist engineering skills
-└── tests/
-    └── design-divergence-cases.md
+No extra package is required (Node.js 18+):
+
+```bash
+node tools/check-design-divergence.mjs --self-test
+node tools/check-design-divergence.mjs design-concepts.json
 ```
 
-Keep each skill's `references/` directory beside its `SKILL.md`. Start with the smallest relevant set of skills rather than loading every specialist for every task.
+Use the `design-concepts.json` contract described in [design-generation-engineering](skills/design-generation-engineering/SKILL.md). For a radical redesign, include a captured baseline fingerprint and evidence.
 
-## Releases
+## Design foundations
 
-See [CHANGELOG.md](CHANGELOG.md). Version 0.7.0 is a major rewrite of the design workflow, not a palette refresh or a new collection of aesthetic presets.
+- [Figma — Design context and AI](https://www.figma.com/resource-library/design-context-ai/)
+- [Cornell/Delft Design Guide — Fish Trap Model](https://arl.human.cornell.edu/PAGES_Delft/Delft_Design_Guide.pdf)
+- [Design Behaviour and Interface Consistency in Generative No-Code Tools (2026)](https://www.mdpi.com/2073-431x/15/4/238)
+- [Playwright — Visual comparisons](https://playwright.dev/docs/test-snapshots)
+
+Visual screenshot comparison is a regression tool, not a measure of originality. Structural diversity, task fit, accessibility, and product fit must be reviewed separately.
 
 ## License
 

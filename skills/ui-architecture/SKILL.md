@@ -1,38 +1,27 @@
 ---
 name: ui-architecture
-description: Converts web product requirements into an evidence-based information architecture, route model, content model, interaction contract, and distinctive surface compositions.
+description: Models web product domains, user tasks, routes, content, interactions, and acceptance criteria before the structural design-generation stage.
 ---
 
-# UI Architecture — model the product before its shell
+# UI Architecture — model the product before choosing its shell
 
-The architecture should reveal what the product is and what users need to do. Do not assume every web app needs the same dashboard shell, sidebar, KPI row, card grid, or modal workflow.
+Do not assume that every application needs a dashboard, sidebar, KPI row, card grid, or modal-first interaction pattern. The architecture should expose the actual domain and help users complete real jobs.
 
 ## Process
 
-1. Extract goals, user groups, jobs, environment, business constraints, technical constraints, existing brand, and non-goals. Mark facts versus assumptions.
-2. Inspect the repository and current product. Identify framework, routes, state/data model, authentication, design system, assets, and project instructions.
-3. Model domain entities, verbs, relationships, decision points, permissions, and error/recovery paths.
-4. Build a route map from user journeys. Classify each route by its main success mode (decide, operate, read, explore, create, monitor, or another evidenced job); do not force every route into a fixed four-mode classification if that loses useful detail.
-5. Inventory actual content shapes and extremes before choosing components.
-6. Run `design-concept-engineering` for new products or materially new visual surfaces. Produce a product-specific design thesis and compare structural alternatives.
-7. Create route-level composition maps, first-viewport hierarchy, navigation model, and responsive transformations. Different tasks may require different surface structures.
+1. Extract goals, users, tasks, usage environment, business constraints, technical constraints, existing identity, and non-goals. Mark facts versus assumptions.
+2. Inspect project instructions, routes, framework, data/state model, auth model, design tokens/components, assets, and existing product behavior.
+3. Model domain objects, operations, relationships, decision points, permissions, errors, and recovery paths.
+4. Map journeys and routes. Describe each route by its actual job: operate, read, compare, transact, explore, create, monitor, configure, or another precise verb.
+5. Inventory real content and extremes before choosing components.
+6. For substantial new or changed visual surfaces, run `design-concept-engineering` followed by `design-generation-engineering`. Do not settle the composition in the architecture phase.
+7. Provide route-level task/content maps and acceptance criteria. Let the design-generation phase explore the layout alternatives.
 8. Define interaction states, semantics, keyboard/focus behavior, error recovery, permissions, offline/loading behavior, and reduced-motion expectations.
-9. Define measurable acceptance criteria and evidence: unit, component, contract, browser, visual, manual accessibility, or user validation as appropriate.
-10. Hand the composition to `design-layout`, the selected grammar to `design-system`, and the rendered result to `design-review`.
+9. Identify evidence: unit, component, contract, browser, visual, manual accessibility, or user validation.
+10. Hand off the domain model and route map to the design-generation process; hand its approved composition to `design-layout` and `design-system`.
 
-## Agent handoff
+## Handoff
 
-Include only applicable sections:
-- product context and assumptions;
-- domain objects, relationships, and primary jobs;
-- route map and user journeys;
-- content inventory and edge cases;
-- route-specific composition and first-screen anchor;
-- navigation and component responsibilities;
-- interaction/state and recovery model;
-- responsive transformation;
-- accessibility and localization contract;
-- acceptance criteria and test evidence plan;
-- implementation sequence and non-goals.
+Include only applicable sections: context and assumptions; domain objects and relationships; user jobs; route/journey map; content inventory; technical and brand constraints; interaction and recovery model; responsive/accessibility contract; measurable acceptance criteria; non-goals.
 
-Do not output generic feature lists or a component inventory before the product model is understood.
+Do not output a generic feature list or preselect an app shell before the domain and task model are understood.

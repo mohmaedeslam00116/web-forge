@@ -1,108 +1,110 @@
 # Design Passport
 
-> Keep this document beside the product code/design decisions. Update it when the product, audience, content, or constraints materially change. Do not copy a passport between unrelated products.
+> Keep beside the product code. Update when the product, task, content, or constraints materially change. Never copy a passport to an unrelated product.
 
-## 1. Context and confidence
+## 1. Change intent and evidence
 
-- Product / surface:
-- Version / route(s):
-- Primary user(s):
-- Primary job(s):
-- Usage environment:
-- Business / trust constraints:
-- Platform / technical constraints:
-- Brand / existing system constraints:
+- Product / surface / routes:
+- Intent: `new-product` / `new-surface` / `evolutionary-redesign` / `radical-redesign`:
+- Primary users and jobs:
+- Usage environment and devices:
+- Business, trust, and technical constraints:
+- Existing brand and intentional conventions:
 - Locale(s), language(s), direction(s):
 - Observed facts:
 - User-provided facts:
 - Inferences:
-- Unknowns and assumptions:
+- Unknowns / assumptions:
 
-## 2. Product model
+## 2. Product model and content
 
 - Important nouns / entities:
 - Important verbs / operations:
 - Relationships:
-- Decision points and risks:
-- Real content shapes and edge cases:
-- Primary success signal (qualitative or measured; do not invent data):
+- Decision points, risks, permissions, and recovery paths:
+- Real content shapes and representative examples:
+- Content density / length extremes / edge cases:
+- User success condition (do not invent metrics):
 
-## 3. Design thesis
+## 3. Baseline fingerprint (existing surface only)
 
-Because **[user]** needs to **[task]** under **[constraint]**, this surface organizes **[information]** around **[interaction/hierarchy]**, expressing **[credible character]**.
+| Structural field | Observed baseline |
+|---|---|
+| `primaryAnchor` | |
+| `navigationModel` | |
+| `primaryRegion` | |
+| `contentTopology` | |
+| `informationDensity` | |
+| `interactionModel` | |
+| `mediaStrategy` | |
+| `responsiveTransformation` | |
 
-## 4. Composition contract
+- Routes and viewport(s) captured:
+- Screenshot / source evidence:
+- Intentional behaviors/brand conventions to preserve:
+- Structural defaults explicitly being challenged:
 
-- First-viewport anchor:
-- Intended eye / task path:
-- Page or workspace composition:
-- Navigation / orientation model:
-- Content sequence and grouping:
-- Density and reading measure:
-- Media / data presentation:
-- Responsive transformations:
+## 4. Design thesis
 
-## 5. Concept exploration
+Because **[specific user]** needs to **[task]** under **[constraint]**, this surface organizes **[actual information]** around **[primary interaction/hierarchy]**.
 
-| Candidate | Structural premise | Strength | Trade-off | Reason accepted/rejected |
+## 5. Structural candidate comparison
+
+The full machine-readable contract lives in `design-concepts.json`.
+
+| Candidate | Structural premise | Strongest task fit | Trade-off | Accepted / rejected because |
 |---|---|---|---|---|
 | A | | | | |
 | B | | | | |
 | C | | | | |
 
-- Selected concept:
-- Why it fits this product:
-- Why the closest alternative lost:
-- Functional signature (or why none is needed):
+- Validator command and result:
+- Selected candidate:
+- Why it wins:
+- Why the closest alternative loses:
+- For radical redesign: selected-vs-baseline structural differences (target >= 4/8):
 
-## 6. Visual grammar
+## 6. Selected composition and responsive behavior
 
-- Hierarchy:
-- Typography and language support:
-- Color roles and contrast:
-- Geometry, borders, surfaces, depth:
-- Spacing / layout constraints:
-- Media / illustration rules:
-- Interaction and motion:
-- Accessibility contract:
-- RTL / localization contract:
+- First-viewport anchor and eye path:
+- Main region arrangement:
+- Navigation and orientation model:
+- Content order and grouping:
+- Density / reading measure:
+- Primary interaction:
+- Media role:
+- Mobile and intermediate transformations:
 
-## 7. Component and pattern contracts
+## 7. Visual grammar
 
-| Component/pattern | Use when | Do not use when | Required states |
-|---|---|---|---|
-| | | | |
+- Typography roles, glyph coverage, measure:
+- Color roles and contrast pairs:
+- Geometry, borders, containment, elevation:
+- Media/art direction:
+- Motion and reduced-motion behavior:
+- Component contracts (Use when / Do not use when):
+- Accessibility and keyboard behavior:
+- Localization / RTL / mixed-direction behavior:
 
 ## 8. Intentional exclusions
 
-| Rejected default/pattern | Product-specific reason | Reconsider when |
+| Rejected pattern | Why it is wrong here | Reconsider when |
 |---|---|---|
 | | | |
 
-## 9. Anti-template checks
+## 9. Rendered validation
 
-- [ ] Grayscale/silhouette structure is purposeful without the palette.
-- [ ] Relabel/swap test does not make the layout fit an unrelated product unchanged.
-- [ ] First viewport reflects the actual primary task or artifact.
-- [ ] Real content shapes the composition; no filler content is required to make it look designed.
-- [ ] Shared components represent shared meaning/behavior.
-- [ ] Different routes have different compositions when their tasks differ.
-- [ ] Responsive behavior is a composition transformation, not simple shrinkage.
-- [ ] Accessibility and localization implications are verified or marked not verified.
+- Routes/states rendered:
+- Browser/version/device scale factor:
+- Viewports/locales/themes:
+- Primary task attempted:
+- Screenshot(s), traces, logs:
+- Differences from selected candidate and rationale:
+- PASS / NEEDS WORK / NOT VERIFIED findings:
+- Remaining risks:
 
-## 10. Validation evidence
+## 10. Change history
 
-- Routes and states rendered:
-- Browser / version / viewport / locale / theme:
-- Tasks completed:
-- Accessibility checks:
-- Responsive checks:
-- Screenshots / traces / test output:
-- Findings and changes:
-- Remaining risks / unverified items:
-
-## 11. Change log
-
-| Date | Change | Evidence/reason | Surfaces affected |
+| Date | Change | Evidence/reason | Surface affected |
 |---|---|---|---|
 | | | | |
