@@ -5,45 +5,44 @@
     ],
     "category": "Developer Tools",
     "defaultPrompt": [
-      "Audit this web project and give me the highest-impact fixes first.",
-      "Turn this website requirement into a production-ready UI architecture and implementation plan.",
-      "Build reliable visual regression coverage for this web project.",
-      "Run the Web Forge release gate on this web project before I ship it."
+      "Redesign this interface from its actual product context; avoid generic AI templates and prove the composition is product-specific.",
+      "Diagnose why this design feels generic and rebuild its hierarchy and layout rather than changing only its colors.",
+      "Turn this website requirement into an implementation-ready product model, distinctive composition, and design system.",
+      "Run the Web Forge release gate and report evidence, failures, and unverified areas."
     ],
     "developerName": "mohamed eslam",
     "displayName": "Web Forge",
-    "longDescription": "An end-to-end workflow for developers and coding agents: understand a product, design its interface, implement it in the existing stack, evaluate accessibility, build reliable tests, validate real browser behavior and visual changes, improve performance and security, and verify release readiness with evidence.",
-    "shortDescription": "Build, test, and ship better web"
+    "longDescription": "A product-aware web design and engineering workflow. Its rebuilt design engine models users, tasks, domain content, environment, brand, and technical constraints before generating distinct structural concepts; it then defines a project-specific visual grammar, implements it, and verifies the rendered result. Includes accessibility, testing, visual regression, browser QA, performance, security, and evidence-based release gates.",
+    "shortDescription": "Design with product context. Build and verify."
   },
   "name": "web-forge",
-  "version": "0.6.0",
-  "description": "An end-to-end web engineering copilot for product-aware design, implementation, accessibility, testing, visual regression, browser QA, performance, security, and evidence-based release verification.",
+  "version": "0.7.0",
+  "description": "An end-to-end web engineering copilot with a rebuilt product-specific design engine, implementation, accessibility, testing, browser QA, visual regression, performance, security, and evidence-based release verification.",
   "author": {
     "name": "mohamed eslam",
-    "email": "mohmaedeslam555@gmail.com"
+    "email": "mohamedeslam555@gmail.com"
   },
   "keywords": [
     "web development",
     "frontend engineering",
-    "web design",
+    "product-specific design",
+    "design context",
+    "visual design",
     "UI architecture",
     "design systems",
+    "design divergence",
+    "anti-template",
     "responsive design",
     "accessibility engineering",
     "WCAG 2.2",
-    "WCAG-EM 2.0",
-    "ARIA",
     "browser testing",
     "test engineering",
     "Playwright",
     "visual regression",
-    "screenshot testing",
-    "Storybook",
     "performance",
     "Core Web Vitals",
     "web security",
     "SEO",
-    "code review",
     "release gate"
   ],
   "skills": "./skills"

@@ -1,5 +1,17 @@
 # Web Forge changelog
 
+## 0.7.0 — Design Engine Rebuild
+
+- Rebuilt the design workflow around product context, domain objects, user tasks, real content, environment, brand history, and technical constraints.
+- Added `design-concept-engineering`, a required concept process for meaningful new designs and repeated-generic-design complaints.
+- Replaced style/pattern selection with structural concept exploration: three low-cost candidates, meaningful divergence across composition dimensions, evidence-based selection, and a product-specific design thesis.
+- Rewrote `design-direction`, `design-layout`, `design-system`, `design-review`, `ui-architecture`, and the `web-design` router.
+- Rebuilt the Design Passport around product model, first-viewport composition, candidate decisions, visual grammar, component use/anti-use contracts, explicit exclusions, and rendered evidence.
+- Added anti-template checks: silhouette, relabel/swap, first-viewport, content, component, route, and responsive tests.
+- Replaced generic warning lists and style menus with context-led diagnostics and content-first composition worksheets.
+- Added cross-domain divergence test cases for a fiction reader, fleet dispatch workspace, and designer portfolio.
+- Added research references for design context, design-system reuse, visual hierarchy, and adaptive composition.
+
 ## 0.6.0
 
 - Added `visual-regression-engineering` for deterministic screenshot baselines, component/page coverage, diff triage, CI artifacts, and reviewed baseline updates.
