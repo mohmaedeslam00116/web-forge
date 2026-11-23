@@ -1,0 +1,40 @@
+{
+  "surfaceMode": "persuade",
+  "rendererAvailable": true,
+  "selected": "B",
+  "candidates": [
+    {
+      "id": "A", "prototypeEvidence": "artifacts/editorial.png",
+      "visualDirection": {
+        "family": "editorial-magazine", "ambition": "composed", "paletteStrategy": "image-led",
+        "mediaApproach": "editorial photography and diagrams", "heroVisual": "A large editorial photograph of the subject with an annotated detail diagram.",
+        "worldSources": ["independent magazines", "museum catalogues"], "sourceFamilies": ["print", "editorial", "culture"],
+        "graphicLanguage": "Masthead, folios, captions, annotations, and column rhythm.", "depthAndMotion": "Print-like surfaces and restrained page transition.",
+        "signatureVisual": "The annotated image index connects story and evidence.", "rationale": "The product needs editorial trust and visual explanation.",
+        "assetPlan": [{"type":"photography","purpose":"show-subject","source":"original","composition":"wide crop with focal point left"}]
+      }
+    },
+    {
+      "id": "B", "prototypeEvidence": "artifacts/cinema.png",
+      "visualDirection": {
+        "family": "cinematic-storytelling", "ambition": "immersive", "paletteStrategy": "committed",
+        "mediaApproach": "full-bleed photography and short video", "heroVisual": "A full-bleed scene shows the real product in its natural environment.",
+        "worldSources": ["documentary film", "architectural night photography"], "sourceFamilies": ["cinema", "architecture", "photography"],
+        "graphicLanguage": "Large scene framing, sparse location markers, and high-contrast labels.", "depthAndMotion": "Layered depth and short scroll transition with static fallback.",
+        "signatureVisual": "A route line ties the hero scene to the product proof.", "rationale": "The surface must sell an experience through scene and proof.",
+        "assetPlan": [{"type":"video","purpose":"show-experience","source":"original","composition":"wide loop with poster fallback"}]
+      }
+    },
+    {
+      "id": "C", "prototypeEvidence": "artifacts/illustration.png",
+      "visualDirection": {
+        "family": "illustration-led", "ambition": "expressive", "paletteStrategy": "full-palette",
+        "mediaApproach": "bespoke illustration and playful graphic marks", "heroVisual": "A custom explanatory scene shows the product's core mechanism in one memorable image.",
+        "worldSources": ["scientific atlas", "contemporary poster art"], "sourceFamilies": ["science", "illustration", "print"],
+        "graphicLanguage": "Cutout silhouettes, labeled arrows, and a multi-color graphic vocabulary.", "depthAndMotion": "Layered illustration with motion only on interaction.",
+        "signatureVisual": "The illustrated mechanism is repeated as a small navigation cue.", "rationale": "The subject benefits from explanation and a recognisable graphic signature.",
+        "assetPlan": [{"type":"illustration","purpose":"explain-mechanism","source":"commissioned-or-original","composition":"large isometric scene"}]
+      }
+    }
+  ]
+}

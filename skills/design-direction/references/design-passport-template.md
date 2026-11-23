@@ -1,110 +1,60 @@
 # Design Passport
 
-> Keep beside the product code. Update when the product, task, content, or constraints materially change. Never copy a passport to an unrelated product.
+## 1. Product / surface
+- Product and route(s):
+- Surface mode: Persuade / Operate / Read / Experience
+- Primary user and task:
+- Domain nouns, verbs, relationships:
+- Actual content/assets:
+- Environment, language, RTL, platform:
+- Observed facts / assumptions / unknowns:
 
-## 1. Change intent and evidence
+## 2. Design thesis
+Because **[user]** needs to **[task]** under **[constraint]**, this surface organizes **[real content]** around **[interaction/hierarchy]**, and expresses **[visual world]**.
 
-- Product / surface / routes:
-- Intent: `new-product` / `new-surface` / `evolutionary-redesign` / `radical-redesign`:
-- Primary users and jobs:
-- Usage environment and devices:
-- Business, trust, and technical constraints:
-- Existing brand and intentional conventions:
-- Locale(s), language(s), direction(s):
-- Observed facts:
-- User-provided facts:
-- Inferences:
-- Unknowns / assumptions:
+## 3. Structural concept
+- First viewport anchor:
+- Composition and major regions:
+- Navigation model:
+- Content topology and density:
+- Main interaction:
+- Responsive transformations:
+- Alternatives rejected and why:
 
-## 2. Product model and content
+## 4. Visual world
+- Family / hybrid:
+- Ambition: restrained / composed / expressive / immersive
+- Source worlds and source families:
+- Mood/physical scene:
+- Palette strategy and color ownership:
+- Typography roles and licenses:
+- Materials, geometry, depth and lighting:
+- Graphic language and signature visual:
+- Motion language and fallback:
+- Deliberate exclusions:
 
-- Important nouns / entities:
-- Important verbs / operations:
-- Relationships:
-- Decision points, risks, permissions, and recovery paths:
-- Real content shapes and representative examples:
-- Content density / length extremes / edge cases:
-- User success condition (do not invent metrics):
-
-## 3. Baseline fingerprint (existing surface only)
-
-| Structural field | Observed baseline |
-|---|---|
-| `primaryAnchor` | |
-| `navigationModel` | |
-| `primaryRegion` | |
-| `contentTopology` | |
-| `informationDensity` | |
-| `interactionModel` | |
-| `mediaStrategy` | |
-| `responsiveTransformation` | |
-
-- Routes and viewport(s) captured:
-- Screenshot / source evidence:
-- Intentional behaviors/brand conventions to preserve:
-- Structural defaults explicitly being challenged:
-
-## 4. Design thesis
-
-Because **[specific user]** needs to **[task]** under **[constraint]**, this surface organizes **[actual information]** around **[primary interaction/hierarchy]**.
-
-## 5. Structural candidate comparison
-
-The full machine-readable contract lives in `design-concepts.json`.
-
-| Candidate | Structural premise | Strongest task fit | Trade-off | Accepted / rejected because |
+## 5. References and provenance
+| Source | Official or community analysis | Useful lesson | What was adapted | What was not copied |
 |---|---|---|---|---|
-| A | | | | |
-| B | | | | |
-| C | | | | |
 
-- Validator command and result:
-- Selected candidate:
-- Why it wins:
-- Why the closest alternative loses:
-- For radical redesign: selected-vs-baseline structural differences (target >= 4/8):
+## 6. Asset plan
+| Slot | Purpose | Medium | Subject/composition | Ratio/crop | Source/rights | Alt/caption |
+|---|---|---|---|---|---|---|
 
-## 6. Selected composition and responsive behavior
-
-- First-viewport anchor and eye path:
-- Main region arrangement:
-- Navigation and orientation model:
-- Content order and grouping:
-- Density / reading measure:
-- Primary interaction:
-- Media role:
-- Mobile and intermediate transformations:
-
-## 7. Visual grammar
-
-- Typography roles, glyph coverage, measure:
-- Color roles and contrast pairs:
-- Geometry, borders, containment, elevation:
-- Media/art direction:
-- Motion and reduced-motion behavior:
-- Component contracts (Use when / Do not use when):
-- Accessibility and keyboard behavior:
-- Localization / RTL / mixed-direction behavior:
-
-## 8. Intentional exclusions
-
-| Rejected pattern | Why it is wrong here | Reconsider when |
-|---|---|---|
-| | | |
-
-## 9. Rendered validation
-
-- Routes/states rendered:
-- Browser/version/device scale factor:
-- Viewports/locales/themes:
-- Primary task attempted:
-- Screenshot(s), traces, logs:
-- Differences from selected candidate and rationale:
-- PASS / NEEDS WORK / NOT VERIFIED findings:
-- Remaining risks:
-
-## 10. Change history
-
-| Date | Change | Evidence/reason | Surface affected |
+## 7. Components and behavior
+| Component | Use when | Do not use when | States / accessibility / responsive rules |
 |---|---|---|---|
-| | | | |
+
+## 8. Validation
+- Structural divergence validator:
+- Visual direction validator:
+- Routes/states rendered:
+- Browser / version / viewport / locale:
+- Asset checks and provenance:
+- Accessibility and responsive checks:
+- Screenshots / traces:
+- Remaining risks / NOT VERIFIED:
+
+## 9. Change log
+| Date | Change | Evidence/reason | Routes affected |
+|---|---|---|---|

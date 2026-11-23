@@ -1,36 +1,30 @@
 # Web Forge changelog
 
-## 0.8.1 — Evidence Hardening
+## 0.9.0 — Visual Art Direction & Brand Reference Engine
 
-- Require explicit renderer availability and screenshot/preview evidence for all three concepts when a renderer is available.
-- Validate all eight baseline fields before comparing a radical redesign.
-- Improve phrase normalization and add negative tests for cosmetic-only changes, repeated structures, and incomplete baselines.
+- Added `visual-art-direction` to expand the visual vocabulary beyond restrained typography and hairline-based layouts.
+- Added a visual-world catalog spanning editorial, cinematic, photographic, illustration, 3D, brutalist, maximalist, luxury, data, spatial, commerce, entertainment, and other product-specific families.
+- Added `brand-reference-engineering` with official/community source distinctions and registries for DESIGN.md repositories.
+- Added `visual-asset-direction` for real asset planning, provenance, responsive art direction, and browser verification.
+- Added `visualDirection` to the concept contract and template alongside structural `layoutDNA`.
+- Added `check-visual-direction.mjs` and visual-variety regression cases; text-only Persuade/Experience concepts now fail by default unless the user explicitly asks for text-only.
+- Integrated high-level workflow lessons from Impeccable without copying or bundling its source files.
+
+## 0.8.1 — Evidence Hardening
+- Require explicit renderer availability and prototype evidence for all three concepts when a renderer is available.
+- Validate complete baseline data for radical redesigns.
 
 ## 0.8.0 — Design Generation Gate
-
-- Added `design-generation-engineering`, a mandatory production workflow for substantial design work and repeated-template complaints.
-- Replaced text-only concept exploration with three rendered structural prototypes before high-fidelity implementation whenever a renderer is available.
-- Added an eight-dimension layout fingerprint and a dependency-free Node validator requiring pairwise concept divergence.
-- Added a radical-redesign gate requiring a captured baseline and structural change across at least four dimensions.
-- Reworked `design-concept-engineering`, `design-direction`, `design-layout`, `design-system`, `design-review`, `ui-architecture`, and `web-design` around a strict discovery → divergence → selection → implementation → rendered verification sequence.
-- Clarified that screenshot diffs are useful for visual regression but cannot prove originality or product fit.
-- Added a design production contract and executable positive/negative self-tests.
+- Added structural concept generation and a dependency-free layout divergence validator.
 
 ## 0.7.0
-
-- Added the design concept engineering workflow and initial cross-domain divergence cases.
-- Rebuilt the design direction, layout, system, review, and web-design routing guidance around product context and composition.
+- Added product-first concept engineering and cross-domain design divergence cases.
 
 ## 0.6.0
-
-- Added `visual-regression-engineering` for deterministic screenshot baselines, component/page coverage, diff triage, CI artifacts, and reviewed baseline updates.
-- Routed visual regression and screenshot-baseline work to the dedicated skill instead of treating it as a generic browser QA task.
-- Strengthened design review, browser QA, and release gates with explicit visual-diff evidence and baseline-governance requirements.
+- Added visual regression engineering and screenshot-baseline governance.
 
 ## 0.5.0
-
 - Added accessibility engineering and risk-based test engineering.
 
 ## 0.4.0
-
-- Added implementation workflow, browser QA, performance engineering, and security review skills.
+- Added implementation workflow, browser QA, performance engineering, and security review.

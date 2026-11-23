@@ -1,70 +1,48 @@
 ---
 name: design-review
-description: Audits actual rendered interfaces for product fit, structural divergence, hierarchy, accessibility, responsive behavior, and implementation drift from the approved design concept.
+description: Reviews rendered product interfaces for task fit, visual quality, image/media craft, design-world fidelity, template repetition, accessibility, and responsiveness.
 ---
 
-# Design Review — verify the real interface, not the design story
+# Design Review — test product fit and visual craft
 
-A page can be beautiful, consistent, and technically responsive while still repeating the same generic composition. Review the rendered result against user tasks, real content, the selected candidate, and (for redesigns) the captured baseline.
+A page can pass structural divergence and still look visually empty. Review the rendered implementation against both the selected layoutDNA and visualDirection. Source-code inspection alone is not a visual review.
 
-## Gate 1 — Evidence integrity
+## 1. Evidence
 
-Record routes, states, browser/engine and version, viewport, device scale factor, locale, theme, sample data, and commands actually run. Capture the first viewport and full page for representative routes. If the page cannot be rendered, mark visual checks NOT VERIFIED. Do not report a source-only inspection as a visual review.
+Record routes, states, browser/version, viewport, locale, theme, data, screenshots, and commands actually run. Inspect the first viewport and full page at the relevant breakpoints. If the browser or assets are unavailable, mark visual checks NOT VERIFIED.
 
-## Gate 2 — Structural comparison
+## 2. Product and structure
 
-Load `design-concepts.json` and the Design Passport. Compare the rendered implementation to the selected `layoutDNA`:
-- first-screen anchor;
-- navigation topology;
-- main-region arrangement;
-- content order/topology;
-- density and measure;
-- primary interaction model;
-- media role;
-- responsive transformation.
+Complete the primary task where possible. Verify that real domain objects, content, relationships, and actions shape the page. Compare the rendered layout with the selected candidate and baseline where applicable.
 
-For a radical redesign, also compare against the captured baseline. Confirm the intended structural changes are visible in the rendered DOM and screenshot. A changed palette with the old silhouette is NEEDS WORK.
+## 3. Visual-world fidelity
 
-Run the divergence validator for the candidate manifest. Treat its pass as descriptor validation only; visually inspect the prototypes and final page. A validator cannot judge whether labels are honest or whether the design is good.
+Check whether the rendered result expresses its selected family through more than font and color:
+- media choice, quality, crop, focal point, and scale;
+- palette strategy and color ownership of meaningful regions;
+- illustration/data/graphic language and signature visuals;
+- materials, depth, surfaces, lighting, and composition;
+- page rhythm, information density, and visual hierarchy;
+- motion quality and reduced-motion fallback.
 
-## Gate 3 — Product and content fit
+## 4. Text-only/minimal default detector
 
-Complete the primary user task where possible. Verify that actual product nouns, actions, relationships, content, and recovery paths shape the page. Look for fake metrics, placeholder content, decorative sections, generic hero copy, and forced card grids.
+For Persuade and Experience, mark NEEDS WORK when the first viewport is only headline, paragraph, buttons, whitespace, and thin dividers despite the brief needing imagery, product proof, or atmosphere. Check whether the asset plan has been implemented. A visual anchor can be photography, illustration, actual product capture, 3D, video, a data/diagram composition, or another meaningful artifact. Do not demand decorative images when the surface genuinely benefits from text or a working tool.
 
-## Gate 4 — Hierarchy, craft, and distinctiveness
+For Operate/Read, assess whether diagrams, charts, media, annotations, data, or typography best support the task. A dense table can be correct; a visually empty dashboard despite rich product data is not.
 
-Ask:
-- Does the first viewport foreground the user's actual job or artifact?
-- Is visual dominance allocated to task importance rather than decoration?
-- Do unrelated sections have a reason to share the same component treatment?
-- Do routes with different jobs use appropriate compositions?
-- Could the page be relabeled as an unrelated product without changing its structure?
-- Has implementation drift restored the former shell?
+## 5. Reference and originality
 
-Do not penalize a conventional table or form when it is the right tool. Do not reward novelty that harms usability.
+Verify that official/community references are labeled correctly and that their useful rules were adapted rather than copied. Look for borrowed logos, proprietary images, brand names used as decoration, copied hero layouts, or references that overwhelm product identity.
 
-## Gate 5 — Responsive, accessibility, and runtime
+## 6. Browser and craft
 
-Inspect key desktop and narrow mobile widths; real populated and failure/empty states; touch and keyboard paths; focus order/visibility; zoom/reflow; language/RTL; clipping/overflow; sticky elements; dialogs; font/image loading; and runtime errors. Verify important controls actually work.
+Check images loading and responsive crop; no layout shift; readable overlay contrast; focus and keyboard; zoom/reflow; RTL; real controls; animation timing; performance; and runtime errors. Verify that visual assets are not broken, unrelated, or fake product proof.
 
-## Gate 6 — Fix in the right order
+## 7. Remediation order
 
-Fix in this order:
-1. incorrect product/task model;
-2. generic or wrong content hierarchy;
-3. wrong composition/navigation;
-4. component grammar and route variation;
-5. typography, content density, and media;
-6. color, surface, and decorative polish.
-
-Do not repair a structural failure with a new gradient, typeface, shadow, radius, or animation.
+Fix in this order: product/task model → content hierarchy → structural composition → visual world/media composition → typography and density → color/surface/texture → motion and micro-detail. Do not patch a visually empty concept with random gradients or stock photos.
 
 ## Verdict
 
-Use PASS / NEEDS WORK / NOT VERIFIED for each applicable gate. Significant design work passes only when:
-- selected concept and rendered structure agree;
-- a radical redesign is demonstrably different from baseline or has a user-approved exception;
-- real content and the primary task shape the hierarchy;
-- responsive and accessibility checks are performed or explicitly marked NOT VERIFIED.
-
-Report exact evidence, routes/states, viewports, screenshots, fixes, and residual risks. Do not claim visual novelty from a score or screenshot diff alone.
+Use PASS / NEEDS WORK / NOT VERIFIED. Separate task usability, structural divergence, visual craft, reference integrity, accessibility, responsiveness, and technical behavior. A good visual-direction score cannot compensate for broken tasks or accessibility.

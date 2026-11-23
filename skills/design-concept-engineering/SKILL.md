@@ -1,53 +1,93 @@
 ---
 name: design-concept-engineering
-description: Models a product's users, domain objects, tasks, content, constraints, and design thesis before choosing an interface composition. Use as the discovery and reasoning stage for new products and major surfaces.
+description: Models a web product's users, tasks, domain objects, content, environment, and constraints before creating a distinctive structural and visual concept. Use for new products, major redesigns, generic-looking results, or requests for a different visual identity.
 ---
 
-# Design Concept Engineering — discover the product problem
+# Design Concept Engineering — discover the product before the template
 
-This skill answers **what the interface must help users understand or do**. It does not approve a design by itself. For actual layout generation and proof, hand off to `design-generation-engineering`.
+A successful design is not merely a novel wireframe. It must fit the product, communicate through a deliberate visual world, and use real content and media. Web Forge runs two separate discovery tracks: **structure** (where things are and how users act) and **art direction** (what the product looks, feels, and sounds like). Both are required for substantial visual work.
 
-## 1. Establish evidence
+## 1. Build a context ledger
 
-Inspect repository instructions, the current product, route structure, user-provided requirements, data models, real content, assets, brand documentation, existing components, platform constraints, locales, and accessibility requirements.
+Separate observed facts, user-provided facts, inference, and unknowns:
+- users, expertise, task frequency, urgency, environment, input modes;
+- product purpose, domain nouns, user verbs, relationships, decision points, error cost;
+- real content, data density, assets, media, variable strings, empty/error/loading states;
+- business goals, trust constraints, commercial model, non-goals;
+- brand commitments, current visual system, existing recognisable assets;
+- framework, components, performance, accessibility, supported browsers, language/RTL;
+- cultural context, audience expectations, date/number conventions, local visual traditions.
 
-Separate facts into:
-- **Observed:** directly found in code, running product, or provided artifact.
-- **Supplied:** explicitly stated by the user.
-- **Inferred:** plausible but not confirmed.
-- **Unknown:** needs a reversible assumption or one essential question.
+Do not invent user research, brand facts, metrics, or competitor analysis. Inspect the repository and rendered product before declaring a surface greenfield.
 
-Never invent user research, business metrics, competitor facts, content, personas, or brand history.
+## 2. Model the product
 
-## 2. Model the domain
+Write:
+- **Nouns:** entities and artifacts the user sees or manages;
+- **Verbs:** operations the user performs;
+- **Relationships:** how records, media, people, places, and decisions connect;
+- **Success:** what the user understands, decides, creates, or completes;
+- **Content shape:** sequence, collection, record, comparison, narrative, live feed, spatial system, creative artifact, or mixed;
+- **Attention peaks:** the one or two things that should dominate the first glance.
 
-Record the product's actual:
-- users and levels of expertise;
-- jobs, frequency, urgency, and success conditions;
-- nouns/entities, verbs/actions, and relationships;
-- decisions, permissions, risks, and recovery paths;
-- content types, real examples, density, and edge cases;
-- environment, device, input, language, locale, and direction;
-- commercial, trust, platform, performance, and delivery constraints.
+## 3. Classify the surface mode
 
-Do not jump from the industry name to an interface template. “A finance app” does not automatically mean a dashboard; “a learning app” does not automatically mean a course-card grid.
+Use the surface's job, not the company's industry:
+- **Persuade:** earn attention, trust, and action;
+- **Operate:** help users complete a repeated or consequential task;
+- **Read:** support comprehension, orientation, and source understanding;
+- **Experience:** put an artifact, collection, or exploration at the center.
 
-## 3. Classify each surface by its actual job
+This choice changes the appropriate density, ambition, media strategy, and motion. Never assume every product is a dashboard or every first page is a marketing hero.
 
-Use precise job language. Common modes include operate, read, persuade, explore, create, monitor, configure, compare, and transact. One product may contain several. Do not impose one global shell merely because routes belong to the same product.
+## 4. Write a design thesis
 
-## 4. Write the design thesis
+> Because **[specific user]** needs to **[task]** under **[constraint]**, this surface organizes **[real content/objects]** around **[useful interaction/hierarchy]**, and expresses **[credible visual world]**.
 
-> Because **[specific user]** needs to **[task]** under **[constraint]**, this surface should organize **[real information]** around **[useful hierarchy or interaction]**.
+If the thesis could be moved unchanged to an unrelated product, it is too generic.
 
-The thesis must name a real task and content model. If it can be pasted unchanged into an unrelated product brief, rewrite it.
+## 5. Explore structure and visual world independently
 
-## 5. Hand off, do not prematurely prescribe
+### Structural candidates
 
-Pass the evidence ledger, domain map, content inventory, route/surface map, constraints, and design thesis to `design-generation-engineering`. Do not prescribe a color palette, card grid, hero, sidebar, visual style label, or component inventory before the structural exploration.
+Use `design-generation-engineering` to compare three candidates that differ in first-screen anchor, navigation, main regions, content topology, information density, interaction model, media role, and responsive transformation. Render them when the environment supports it.
 
-For an existing product, include the current structural baseline and identify exactly which parts are intentional brand/interaction conventions and which are being challenged.
+### Visual-world candidates
 
-## Output
+Use `visual-art-direction` to discover at least seven possible visual systems for a new/replaced identity and select a world with a reason. Do not let the structure stage silently decide that the visual system must be neutral or minimal. Explore image-led, editorial, cinematic, photographic, illustrative, 3D, collage, material, graphic, data, and other families as relevant. Use at least three source families when deriving a new world.
 
-Keep the discovery report short enough to use. Include evidence status, domain model, user jobs, content shapes, route modes, constraints, design thesis, and unanswered questions. The next step is design generation, not a decorative moodboard.
+### References
+
+Use `brand-reference-engineering` to search first-party design systems and community DESIGN.md libraries. Label their authority correctly. Use references to expand the visual vocabulary and extract a small number of transferable rules; do not clone a famous site's layout or assets.
+
+### Assets
+
+Use `visual-asset-direction` to identify actual photography, illustration, product captures, diagrams, data visuals, 3D, video, or textures needed. A media plan must describe composition, not merely say "add image".
+
+## 6. Select with a two-part scorecard
+
+Evaluate each concept independently for:
+- product/task fit;
+- content integrity;
+- structural usefulness;
+- visual-world specificity and ambition appropriate to the mode;
+- visual proof and media relevance;
+- audience, market, and brand credibility;
+- accessibility and responsive feasibility;
+- implementation cost and performance.
+
+Reject a result that passes structural diversity but still collapses into the same text-only minimal visual world. Reject a visually spectacular result that weakens the task.
+
+## 7. Document before building
+
+Save `DESIGN.md` or the repository's established equivalent. Include a Product Context section, surface mode, design thesis, chosen structural concept, visual world, design references with provenance, asset plan, component contracts, responsive logic, deliberate exclusions, and validation evidence.
+
+## Definition of done
+
+- context and unknowns are explicit;
+- domain nouns, verbs, relationships, and content shapes drive the product model;
+- three structural candidates are compared;
+- art direction is chosen separately from structure;
+- the result is not a text-only/minimal default unless a real reason supports it;
+- source and rights of visual references/assets are documented;
+- implementation and rendered review can be traced back to the selected concept.

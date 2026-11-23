@@ -1,61 +1,110 @@
 {
   "project": "REPLACE_WITH_PROJECT_NAME",
+  "surfaceMode": "persuade",
   "intent": "new-product",
   "selected": "B",
-  "referenceNotes": "List useful lessons and what was not copied. If research was unavailable, state so.",
-  "baselineEvidence": "For radical-redesign: baseline route, screenshot/source, browser, and viewport.",
-  "baseline": null,
+  "referenceNotes": "Record official vs community sources and lessons adapted rather than copied.",
+  "rendererAvailable": true,
   "candidates": [
     {
       "id": "A",
-      "thesis": "Because [user] needs to [task], this concept organizes [information] around [interaction].",
-      "tradeoff": "What this structure makes harder or less efficient.",
+      "thesis": "Product-specific concept thesis.",
+      "tradeoff": "The main compromise.",
       "prototypeEvidence": "artifacts/concept-a.png",
-      "rejectionReason": "Required for every non-selected candidate.",
+      "rejectionReason": "Required for non-selected concepts.",
       "layoutDNA": {
-        "primaryAnchor": "specific first-screen focus",
-        "navigationModel": "specific orientation model",
-        "primaryRegion": "spatial arrangement of primary regions",
-        "contentTopology": "actual information relationship and order",
-        "informationDensity": "visible density and priority",
-        "interactionModel": "primary user operation",
-        "mediaStrategy": "role of images/data/diagrams or no media",
-        "responsiveTransformation": "how the structure changes at narrow widths"
+        "primaryAnchor": "The first-screen artifact or decision.",
+        "navigationModel": "How the user orients.",
+        "primaryRegion": "The major spatial arrangement.",
+        "contentTopology": "The dominant information relationship.",
+        "informationDensity": "What is visible and prioritized.",
+        "interactionModel": "The dominant user operation.",
+        "mediaStrategy": "The role of media or data visuals.",
+        "responsiveTransformation": "How the composition changes on narrow screens."
+      },
+      "visualDirection": {
+        "family": "editorial-magazine",
+        "ambition": "composed",
+        "worldSources": ["independent-magazine-layouts", "museum-catalogues"],
+        "sourceFamilies": ["editorial", "print", "culture"],
+        "paletteStrategy": "image-led",
+        "mediaApproach": "editorial-photography-and-annotated-diagrams",
+        "heroVisual": "A large, original editorial photograph paired with a clearly labeled diagram.",
+        "graphicLanguage": "Captions, folios, index numbers, and a consistent annotation rule.",
+        "depthAndMotion": "Flat print-inspired surfaces with a short page transition only.",
+        "signatureVisual": "A repeating visual index that links the image, article, and source evidence.",
+        "assetPlan": [
+          {"type":"photography","purpose":"establish-subject","source":"original-or-licensed","composition":"wide editorial crop with protected focal point"},
+          {"type":"diagram","purpose":"explain-relationship","source":"authored-from-real-content","composition":"inline annotated illustration"}
+        ],
+        "rationale": "The surface must lead with the artifact and make the content memorable."
       }
     },
     {
       "id": "B",
-      "thesis": "Because [user] needs to [task], this concept organizes [information] around [interaction].",
-      "tradeoff": "What this structure makes harder or less efficient.",
+      "thesis": "Product-specific concept thesis.",
+      "tradeoff": "The main compromise.",
       "prototypeEvidence": "artifacts/concept-b.png",
       "layoutDNA": {
-        "primaryAnchor": "different first-screen focus",
-        "navigationModel": "different orientation model",
-        "primaryRegion": "different spatial arrangement of primary regions",
-        "contentTopology": "different information relationship and order",
-        "informationDensity": "different visible density and priority",
-        "interactionModel": "different primary user operation",
-        "mediaStrategy": "different media role",
-        "responsiveTransformation": "different narrow-screen structural change"
+        "primaryAnchor": "A working collection or direct task.",
+        "navigationModel": "A collection-led index.",
+        "primaryRegion": "A split visual collection and detail panel.",
+        "contentTopology": "Collection with contextual details.",
+        "informationDensity": "Moderate with strong image priority.",
+        "interactionModel": "Browse, inspect, and compare.",
+        "mediaStrategy": "Product/collection images lead each selection.",
+        "responsiveTransformation": "Collection becomes a single-column discovery flow."
+      },
+      "visualDirection": {
+        "family": "photographic-commerce",
+        "ambition": "expressive",
+        "worldSources": ["gallery-merchandising", "contemporary-product-photography"],
+        "sourceFamilies": ["photography", "retail", "craft"],
+        "paletteStrategy": "committed",
+        "mediaApproach": "large-subject-photography-with-detail-crops",
+        "heroVisual": "A strong, full-width subject photograph with an intentional product detail inset.",
+        "graphicLanguage": "Bold category color fields, precise labels, and asymmetrical photo crops.",
+        "depthAndMotion": "Layered image planes with reduced-motion-safe transition.",
+        "signatureVisual": "A consistent product-detail frame that makes comparison easy.",
+        "assetPlan": [
+          {"type":"photography","purpose":"show-primary-subject","source":"real-product-or-licensed","composition":"wide hero plus detail crop"},
+          {"type":"color-swatch","purpose":"show-variant","source":"real-product-data","composition":"inline selectable swatches"}
+        ],
+        "rationale": "The subject is visual; the interface should let the work/product speak before reading begins."
       }
     },
     {
       "id": "C",
-      "thesis": "Because [user] needs to [task], this concept organizes [information] around [interaction].",
-      "tradeoff": "What this structure makes harder or less efficient.",
+      "thesis": "Product-specific concept thesis.",
+      "tradeoff": "The main compromise.",
       "prototypeEvidence": "artifacts/concept-c.png",
+      "rejectionReason": "Required for non-selected concepts.",
       "layoutDNA": {
-        "primaryAnchor": "another distinct first-screen focus",
-        "navigationModel": "another distinct orientation model",
-        "primaryRegion": "another distinct spatial arrangement",
-        "contentTopology": "another distinct information relationship/order",
-        "informationDensity": "another distinct density/priority model",
-        "interactionModel": "another distinct primary user operation",
-        "mediaStrategy": "another distinct media role",
-        "responsiveTransformation": "another distinct mobile transformation"
+        "primaryAnchor": "A live task/record rather than a promotional headline.",
+        "navigationModel": "Contextual workspace navigation.",
+        "primaryRegion": "A live primary work area with adjacent status/context.",
+        "contentTopology": "Records and changing state.",
+        "informationDensity": "High but segmented by task importance.",
+        "interactionModel": "Filter, inspect, act, and recover.",
+        "mediaStrategy": "Charts/diagrams only where they reveal state.",
+        "responsiveTransformation": "Prioritized task stack with secondary context disclosed."
       },
-      "rejectionReason": "Required for every non-selected candidate."
+      "visualDirection": {
+        "family": "data-scientific",
+        "ambition": "composed",
+        "worldSources": ["scientific-atlas", "instrument-panel-graphics"],
+        "sourceFamilies": ["science", "industrial", "data"],
+        "paletteStrategy": "full-palette",
+        "mediaApproach": "real-data-visualization-and-status-graphics",
+        "heroVisual": "An accurate real-data visualization or a prioritized live exception queue.",
+        "graphicLanguage": "Shape-coded statuses, labeled plot families, precise axes, and clear grid structure.",
+        "depthAndMotion": "Flat technical surfaces with motion only for state change.",
+        "signatureVisual": "An exception visualization connected directly to the records it summarizes.",
+        "assetPlan": [
+          {"type":"data-visualization","purpose":"reveal-state","source":"real-or-explicitly-illustrative-data","composition":"responsive chart with text alternative"}
+        ],
+        "rationale": "The job is rapid decision-making; the visual system must make status and evidence visible."
+      }
     }
-  ],
-  "rendererAvailable": true
+  ]
 }

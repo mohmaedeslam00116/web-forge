@@ -1,76 +1,78 @@
 # Web Forge
 
-**Version:** 0.8.1 — Design Generation Gate  
+**Version:** 0.9.0 — Visual Art Direction & Brand Reference Engine  
 **Type:** Agent skill pack / web engineering workflow  
 **Author:** Mohamed Eslam
 
-Web Forge is an end-to-end web engineering skill set for developers and coding agents. Its design process is product-first and evidence-driven: inspect a real product and its content, generate structurally different prototypes, validate their divergence, select the best task fit, implement it, and verify the rendered result.
-
-It is designed to address a common failure in AI-generated interfaces: different products receiving nearly identical page structures with only the colors, fonts, and decorative treatment changed.
+Web Forge is a product-first web design and engineering workflow. It now treats structural composition and visual art direction as two independent design decisions. This release specifically addresses the failure where different sites become structurally different but still look like restrained text documents.
 
 ## Start here
 
-For a new website, major redesign, or repeated-template complaint, start with:
+For a new website, major redesign, or a result that looks too abstract/minimal, start with:
 
-1. [design-concept-engineering](skills/design-concept-engineering/SKILL.md) — model the user's job, domain objects, relationships, content, and constraints.
-2. [design-generation-engineering](skills/design-generation-engineering/SKILL.md) — create three materially different structural prototypes, validate the layout fingerprints, and carry the selected concept into implementation.
-3. [web-design](skills/web-design/SKILL.md) — route the selected composition through design direction, layout, system, implementation, and rendered review.
+1. [design-concept-engineering](skills/design-concept-engineering/SKILL.md) — understand product, tasks, content, and constraints.
+2. [visual-art-direction](skills/visual-art-direction/SKILL.md) — discover a distinct visual world, family, palette strategy, media composition, and signature.
+3. [brand-reference-engineering](skills/brand-reference-engineering/SKILL.md) — consult official and community DESIGN.md collections with clear provenance.
+4. [visual-asset-direction](skills/visual-asset-direction/SKILL.md) — plan and verify photography, illustration, product captures, diagrams, 3D, texture, and video.
+5. [design-generation-engineering](skills/design-generation-engineering/SKILL.md) and [web-design](skills/web-design/SKILL.md) — render diverse concepts, validate them, implement, and review.
 
 ## Skill catalog
 
 | Skill | Responsibility |
 |---|---|
-| [design-generation-engineering](skills/design-generation-engineering/SKILL.md) | Structural concept generation, rendered candidate prototypes, divergence gate |
-| [design-concept-engineering](skills/design-concept-engineering/SKILL.md) | Product discovery, task model, real content, and design thesis |
+| [visual-art-direction](skills/visual-art-direction/SKILL.md) | Broad visual vocabulary, ambition levels, art direction and visual world |
+| [brand-reference-engineering](skills/brand-reference-engineering/SKILL.md) | Official/community DESIGN.md lookup, comparison, and provenance |
+| [visual-asset-direction](skills/visual-asset-direction/SKILL.md) | Photography, illustration, 3D, diagrams, product media, and asset verification |
+| [design-generation-engineering](skills/design-generation-engineering/SKILL.md) | Structural + visual concept generation and quality gates |
+| [design-concept-engineering](skills/design-concept-engineering/SKILL.md) | Product/task/content discovery and design thesis |
 | [web-design](skills/web-design/SKILL.md) | End-to-end design and engineering router |
-| [ui-architecture](skills/ui-architecture/SKILL.md) | Domain model, routes, interaction and acceptance criteria |
-| [design-direction](skills/design-direction/SKILL.md) | Visual grammar after structural selection |
-| [design-layout](skills/design-layout/SKILL.md) | Content-first composition and responsive transformation |
-| [design-system](skills/design-system/SKILL.md) | Semantic tokens and reusable component contracts |
-| [design-review](skills/design-review/SKILL.md) | Rendered structural, usability, accessibility and responsive review |
-| [implementation-workflow](skills/implementation-workflow/SKILL.md) | Incremental implementation in the existing codebase |
-| [accessibility-engineering](skills/accessibility-engineering/SKILL.md) | WCAG-oriented accessibility engineering |
-| [test-engineering](skills/test-engineering/SKILL.md) | Risk-based test strategy and test reliability |
-| [browser-qa](skills/browser-qa/SKILL.md) | Real browser interactions, responsive states and QA |
+| [ui-architecture](skills/ui-architecture/SKILL.md) | Domain model, routes, interactions and acceptance criteria |
+| [design-direction](skills/design-direction/SKILL.md) | Visual grammar after concept selection |
+| [design-layout](skills/design-layout/SKILL.md) | Content-first composition and responsive transformations |
+| [design-system](skills/design-system/SKILL.md) | Tokens, components and surface-specific visual rules |
+| [design-review](skills/design-review/SKILL.md) | Rendered quality, visual diversity, product fit, accessibility and responsiveness |
 | [visual-regression-engineering](skills/visual-regression-engineering/SKILL.md) | Stable screenshot baselines and visual diff diagnosis |
+| [browser-qa](skills/browser-qa/SKILL.md) | Real browser behavior and responsive QA |
+| [accessibility-engineering](skills/accessibility-engineering/SKILL.md) | WCAG-oriented accessibility engineering |
+| [test-engineering](skills/test-engineering/SKILL.md) | Risk-based test strategy |
+| [implementation-workflow](skills/implementation-workflow/SKILL.md) | Incremental implementation |
 | [performance-engineering](skills/performance-engineering/SKILL.md) | Performance diagnosis and optimization |
 | [security-review](skills/security-review/SKILL.md) | Threat-informed security review |
 | [web-audit](skills/web-audit/SKILL.md) | Evidence-backed website audits |
 | [release-gate](skills/release-gate/SKILL.md) | Evidence-based pre-release checks |
 
-## What is different in 0.8.0?
+## What changed in 0.9.0
 
-A design description is no longer enough. Substantial work now requires:
+- Added a Visual Art Direction engine with a broad catalog of visual worlds rather than a typography/minimalism-first default.
+- Added Brand Reference Engineering for first-party and community DESIGN.md sources, with explicit source-authority and provenance handling.
+- Added Visual Asset Direction for photography, real product captures, illustration, 3D, diagrams, maps, video, and textures.
+- Added an independent visual-direction contract and a dependency-free checker that rejects three same-family or all-text proposals for Persuade/Experience work.
+- Updated the design-concepts template to require `visualDirection` alongside the existing eight-field structural `layoutDNA`.
+- Added cross-product visual-variety test cases.
+- Studied Impeccable as an external methodology reference. Web Forge does not bundle its source code or require its CLI.
 
-- three candidate structures, each described by the same eight structural fields;
-- three low-fidelity prototypes rendered in a browser/project renderer when available, with screenshot/preview evidence for each;
-- a check that each pair differs in at least four of eight structural dimensions;
-- an explicit `rendererAvailable` flag; if rendering is unavailable, all three candidates must disclose `NOT AVAILABLE: [reason]`;
-- a complete captured old-layout baseline for radical redesigns, with the selected concept differing in at least four dimensions;
-- implementation of the selected structure, then a rendered review against the candidate and baseline.
+## Validators
 
-The automated checker is a guardrail, not a design judge. It validates declared structural separation; it cannot determine if a concept is useful, beautiful, or usable. Those require reviewing the actual prototype and implementation.
-
-## Run the validator
-
-No extra package is required (Node.js 18+):
+Node.js 18+; no additional package required:
 
 ```bash
 node tools/check-design-divergence.mjs --self-test
 node tools/check-design-divergence.mjs design-concepts.json
+node tools/check-visual-direction.mjs --self-test
+node tools/check-visual-direction.mjs design-concepts.json
 ```
 
-Use the `design-concepts.json` contract described in [design-generation-engineering](skills/design-generation-engineering/SKILL.md). For a radical redesign, include a captured baseline fingerprint and evidence.
+The structural checker detects repeated layouts. The visual-direction checker screens for repeated design families, missing visual-world descriptions, vague asset plans, and all-text Persuade/Experience concepts. Neither checker can decide whether an image is good, a world is appropriate, or a design is beautiful; inspect rendered previews.
 
-## Design foundations
+## Brand-reference libraries
 
-- [Figma — Design context and AI](https://www.figma.com/resource-library/design-context-ai/)
-- [Cornell/Delft Design Guide — Fish Trap Model](https://arl.human.cornell.edu/PAGES_Delft/Delft_Design_Guide.pdf)
-- [Design Behaviour and Interface Consistency in Generative No-Code Tools (2026)](https://www.mdpi.com/2073-431x/15/4/238)
-- [Playwright — Visual comparisons](https://playwright.dev/docs/test-snapshots)
+- [Official DESIGN.md tracker](https://github.com/VoltAgent/official-design-md) — first-party documents only.
+- [Awesome DESIGN.md](https://github.com/VoltAgent/awesome-design-md) — broad community analyses of public sites.
+- [Design MD Hub](https://github.com/dhananjay6561/design-md-hub) — a second community collection with preview pages.
+- [Impeccable](https://github.com/pbakaus/impeccable) — external design-agent methodology reference.
 
-Visual screenshot comparison is a regression tool, not a measure of originality. Structural diversity, task fit, accessibility, and product fit must be reviewed separately.
+Use official docs as source of truth. Community analyses are useful inspiration, not official statements or endorsement. Follow their licenses and never copy proprietary logos, fonts, photos, or brand assets without permission.
 
 ## License
 
-No license has been added yet. Do not assume redistribution, modification, or commercial-use permissions until the author selects and adds a license.
+No license has been added to this repository yet. Do not assume redistribution, modification, or commercial-use permissions until the author selects a license.

@@ -1,40 +1,46 @@
 ---
 name: web-design
-description: Product-specific web design and implementation router that forces structural concept exploration, rendered proof, and anti-template validation for meaningful design work.
+description: End-to-end design and implementation router for websites and web apps, with product-specific structure, diverse visual art direction, brand references, real asset planning, and rendered review.
 ---
 
-# Web Design — discover, generate, render, verify
+# Web Design — build a product, not another AI-looking template
 
-The interface must follow the product's real tasks, content, users, brand, and environment. Do not start by applying a familiar UI shell. Do not call a palette change a redesign.
+Web Forge must produce the visual language the product deserves. Do not default to text-heavy minimalism, muted colors, thin borders, centered headlines, or the same dashboard shell. Those are possible choices only when the brief and task justify them.
 
 ## Route by intent
 
-| User request | Mandatory path |
+| Request | Required path |
 |---|---|
-| New product, website, or major surface | `ui-architecture` → `design-concept-engineering` → `design-generation-engineering` → `design-direction` → `design-layout` → `design-system` → implementation → `design-review` |
-| Same-looking output, generic design, rejected redesign, “make it completely different” | Capture baseline → `design-review` diagnosis → `design-concept-engineering` → `design-generation-engineering` in radical-redesign mode → direction/layout/system → implementation → rendered review |
-| New route or feature | Inspect Design Passport → `ui-architecture` if task/flow changes → `design-layout` → selected specialist(s) → implementation → focused rendered review |
-| Small isolated UI fix | Inspect current route/component → implementation → focused review; do not force a full concept process |
-| Design system/component work | `design-concept-engineering` when product model is unclear → `design-system` → test in multiple contexts → review |
-| Responsive, keyboard, accessibility, or visual regression | `design-layout` + relevant specialist (`accessibility-engineering`, `browser-qa`, `visual-regression-engineering`) + `design-review` |
-| Audit or release | `web-audit` or `release-gate`, then route findings to focused specialists |
+| New product, new site, major redesign | `ui-architecture` → `design-concept-engineering` → `brand-reference-engineering` when useful → `visual-art-direction` → `visual-asset-direction` → `design-generation-engineering` → `design-direction` → `design-layout` → `design-system` → implementation → `design-review` |
+| "Too minimal", "too abstract", visually empty, text-only look | `design-review` diagnosis → `visual-art-direction` → `brand-reference-engineering` → `visual-asset-direction` → concept generation → implementation → rendered critique |
+| Brand-inspired interface / DESIGN.md request | `brand-reference-engineering` → `visual-art-direction` → `design-system` → layout/implementation → review |
+| Asset-heavy campaign, portfolio, store, travel, media, game, food, or lifestyle site | `visual-art-direction` → `visual-asset-direction` → `design-generation-engineering` → implementation → review |
+| Dashboard, editor, docs, or operational interface | `ui-architecture` → `design-concept-engineering` → `visual-art-direction` with Operate/Read mode → `design-layout` → `design-system` → implementation → review |
+| Small isolated UI fix | Inspect incumbent design and use `implementation-workflow`; do not trigger full concept replacement |
+| Accessibility, testing, performance, security, or release | Route to the relevant specialist skills and add browser/review evidence as needed |
 
-## Non-negotiable rules for meaningful design work
+## Required design sequence for meaningful work
 
-1. Inspect the actual project, routes, content, assets, design system, and current render before changing it.
-2. Identify whether the task is a new product, new surface, evolutionary redesign, or radical redesign.
-3. Run `design-generation-engineering`. It requires three structurally different candidates and a machine-checkable layout fingerprint before high-fidelity implementation.
-4. Do not begin styling before a candidate is selected. Palette, font, radius, shadows, and animation do not count as structural differences.
-5. For radical redesigns, preserve the old baseline for comparison but do not let its generic shell silently dictate the new composition.
-6. Implement the selected concept. Do not drift back to the agent's usual centered hero, KPI row, three-card grid, and sidebar unless the task evidence explicitly justifies that structure.
-7. Render the actual page and review it against the candidate. If the structure has reverted, return to layout—not cosmetics.
-8. Share components for shared semantics and behavior. Do not unify unrelated surfaces merely for visual sameness.
-9. Report what was rendered and tested, what passed/failed, and what is not verified.
+1. Inspect the actual product, current UI, assets, routes, content, and existing design system.
+2. Model users, domain objects, tasks, relationships, and content shapes.
+3. Classify the surface as Persuade, Operate, Read, or Experience.
+4. Build the visual world with `visual-art-direction`; compare a broad range of visual families, not only typography-led minimalism.
+5. Search and record relevant official/community DESIGN.md references where useful.
+6. Define the media plan using `visual-asset-direction`; specify real photos, product captures, illustration, 3D, diagrams, maps, video, texture, or a reason for no media.
+7. Create three structurally and visually different rendered concepts; run both validators.
+8. Choose based on task fit, content truth, visual ambition, audience, accessibility, and feasibility.
+9. Implement the selected concept without slipping back into the familiar starter shell.
+10. Review the real rendered result and compare it to the candidate, references, and asset plan.
 
-## Anti-template failures
+## Anti-minimalism contract
 
-A significant design is **NEEDS WORK** when it changes only skin; uses the same first-screen silhouette without justification; imposes a universal page shell; ignores real content; or fails the divergence contract. Do not hide these failures with extra visual effects.
+- Three candidates must not all be typography + whitespace + thin dividers.
+- Persuade/Experience candidates include at least two genuine media-bearing proposals unless text-only is explicitly requested.
+- At least one candidate must explore a different palette/material/graphic strategy from restrained neutral surfaces.
+- For image-led products, real visual assets must appear early in the composition, not as tiny thumbnails below a generic hero.
+- Do not use a generic gradient or stock image as a substitute for art direction.
+- Minimalism remains valid when the user, brand, or task supports it; it is not the universal default.
 
-## Completion contract
+## Quality contract
 
-Deliver a working interface, the Design Passport and concept manifest for meaningful design work, validator output, rendered evidence, responsive/accessibility findings, and unverified limitations. A passing structural validator alone is not design approval.
+A substantial design is incomplete until the visual world, asset plan, concept evidence, and rendered implementation have been reviewed. Report implemented, verified, needs work, and not verified separately. Never claim actual imagery or rendering was tested when only text and source files were inspected.
